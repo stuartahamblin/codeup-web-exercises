@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Register With Us</title>
 </head>
 <body>
-$END$
+    <form method="POST" action="http://http-inspector.glitch.me/">
+        <h2>Veridian Dynamics Registration</h2>
+        <p>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" placeholder="Enter your email">
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter your password">
+        </p>
+        <p>Tell us about yourself!</p>
+            <textarea name="bio"></textarea>
+        <p>How did you hear about us?</p>
+            <label><input type="checkbox" name="billboard" value="billboard"> Billboard</label>
+            <label><input type="checkbox" name="radio advertisement" value="radio advertisement"> Radio Advertisement</label>
+            <label><input type="checkbox" name="internet advertisement" value="internet advertisement"> Internet Advertisement</label>
+            <label><input type="checkbox" name="other" value="other"> Other</label>
+        <p>What is the web browser you are using?
+            <select>
+                <option value="Chrome">Chrome</option>
+                <option value="Safari">Safari</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Internet Explorer">Internet Explorer</option>
+            </select>
+        </p>
+        <button type="Submit">Submit</button>
+    </form>
+
 </body>
 </html>
