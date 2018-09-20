@@ -10,12 +10,146 @@
     <p>USE OF THIS FORM BY PERSONS WHO ARE NOT MEMBERS OF THE TEXAS ASSOCIATION OF REALTORS() IS NOT AUTHORIZED.<p>
     <p><strong>()Texas Association of REALTORS(), Inc. 2007</strong></p>
 <hr>
-    <p>Property Address:<textarea name="bio" placeholder="Enter your address"></textarea></p>
+    <p>Property Address:<textarea name="property address"></textarea></p>
     <p>
         Anticipated:
-        Move-in Date:<textarea name="move-in date" placeholder="01/01/2019"></textarea>
-        Monthly Rate: $<textarea name="monthly rate" placeholder="1,000"></textarea>
-        Security Deposit: $<textarea name="security deposit" placeholder="1,000,000"></textarea>
+        Move-in Date:<textarea name="move-in date" placeholder="MM/DD/YYYY"></textarea>
+        Monthly Rate: $<textarea name="monthly rate" placeholder="XX,XXX.XX"></textarea>
+        Security Deposit: $<textarea name="security deposit" placeholder="XX,XXX.XX"></textarea>
+    </p>
+    <p>
+        Applicant was referred to Landlord by:
+        <label><input type="checkbox" name="real estate agent" value="real estate agent"> Real estate agent</label>
+        <textarea name="agent" placeholder="Real estate agent name"></textarea>
+        <textarea name="agent number" placeholder="phone number"></textarea><br>
+        <label><input type="checkbox" name="newspaper" value="newspaper"> Newspaper</label>
+        <label><input type="checkbox" name="sign" value="sign"> Sign</label>
+        <label><input type="checkbox" name="Internet" value="Internet"> Internet</label>
+        <label><input type="checkbox" name="other" value="other"> Other</label>
+        <textarea name="other text"></textarea>
+    </p>
+    <p>
+        Applicant's name <textarea name="applicant's name" placeholder="First, Middle, Last"></textarea><br>
+        Is there a co-applicant?
+        <label><input type="radio" name="a" value="yes"> Yes</label>
+        <label><input type="radio" name="a" value="no"> No</label>
+        <strong><em>If yes, the co-applicant must submit a separate application.</em></strong><br>
+        Applicant's former last name
+        <textarea name="former last name" placeholder="Maiden or Married"></textarea><br>
+        Email<textarea name="Email"></textarea>
+        Home Phone<textarea name="Home Phone"></textarea><br>
+        Work Phone<textarea name="Work Phone"></textarea>
+        Mobile/Pager<textarea name="Mobile/Pager"></textarea><br>
+        Soc. Sec. No.<textarea name="Soc. Sec. No."></textarea>
+        Driver's License No.<textarea name="Driver's License No."></textarea>
+        in<textarea name="state" placeholder="State"></textarea><br>
+        Date of Birth<textarea name="Date of Birth"></textarea>
+        Height<textarea name="Height"></textarea>
+        Weight<textarea name="Weight"></textarea>
+        Eye Color
+        <select>
+            <option value="Brown">Brown</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Other">Other</option>
+        </select><br>
+        Hair Color
+        <select>
+            <option value="Brown">Brown</option>
+            <option value="Blond">Blond</option>
+            <option value="Black">Black</option>
+            <option value="Other">Other</option>
+        </select>
+        Marital Status
+        <select>
+            <option value="Choose not to answer">Choose not to answer</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Domestic Partnership">Domestic Partnership</option>
+            <option value="Partnered">Partnered</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Separated">Separated</option>
+            <option value="Other">Other</option>
+        </select>
+        Citizenship <textarea name="Country" placeholder="Country"></textarea>
+    </p>
+    <p>
+        Emergency Contact:
+        Name:<textarea name="Emergency Contact name"></textarea><br>
+        Address:<textarea name="Emergency Contact Address"></textarea><br>
+        Phone:<textarea name="Emergency Contact Phone:"></textarea>
+        Email<textarea name="Emergency Contact Email"></textarea>
+    </p>
+    <p>
+        Name all other person's who will occupy the property: <br>
+        Name:<textarea name="other person name 1"></textarea>
+        Relationship:<textarea name="other person relationship 1"></textarea>
+        Age:<textarea name="other person age 1"></textarea><br>
+
+        Name:<textarea name="other person name 2"></textarea>
+        Relationship:<textarea name="other person relationship 2"></textarea>
+        Age:<textarea name="other person age 2"></textarea><br>
+
+        Name:<textarea name="other person name 3"></textarea>
+        Relationship:<textarea name="other person relationship 3"></textarea>
+        Age:<textarea name="other person age 3"></textarea><br>
+
+        Name:<textarea name="other person name 4"></textarea>
+        Relationship:<textarea name="other person relationship 4"></textarea>
+        Age:<textarea name="other person age 4"></textarea>
+    </p>
+    <p>
+        Applicant's Current Address:
+        <textarea name="address" placeholder="Street"></textarea>
+        Apt. No.
+        <textarea name="Apt No"></textarea><br>
+        <textarea name="Current City" placeholder="City"></textarea>,
+        <textarea name="Current State" placeholder="State"></textarea>,
+        <textarea name="Current Zip" placeholder="Zip"></textarea><br>
+        Landlord's name: <textarea name="Landlord's name"></textarea>
+        Email:<textarea name="current email"></textarea><br>
+        Phone: Day: <textarea name="current day phone"></textarea>
+        Nt:<textarea name="current nt phone"></textarea>
+        Md:<textarea name="current md phone"></textarea>
+        Fax:<textarea name="current fax phone"></textarea><br>
+        Date Moved-In<textarea name="current date moved-in"></textarea>
+        Date Moved-Out<textarea name="current date moved-out"></textarea>
+        Rent $ <textarea name="current rent"></textarea><br>
+        Reason for move <textarea name="current reason for move"></textarea>
+    </p>
+    <p>
+        Applicant's Previous Address:
+        <textarea name="address" placeholder="Street"></textarea>
+        Apt. No.
+        <textarea name="Apt No"></textarea><br>
+        <textarea name="previous City" placeholder="City"></textarea>,
+        <textarea name="previous State" placeholder="State"></textarea>,
+        <textarea name="previous Zip" placeholder="Zip"></textarea><br>
+        Landlord's name: <textarea name="Landlord's name"></textarea>
+        Email:<textarea name="previous email"></textarea><br>
+        Phone: Day: <textarea name="previous day phone"></textarea>
+        Nt:<textarea name="previous nt phone"></textarea>
+        Md:<textarea name="previous md phone"></textarea>
+        Fax:<textarea name="previous fax phone"></textarea><br>
+        Date Moved-In<textarea name="previous date moved-in"></textarea>
+        Date Moved-Out<textarea name="previous date moved-out"></textarea>
+        Rent $ <textarea name="previous rent"></textarea><br>
+        Reason for move <textarea name="previous reason for move"></textarea>
+    </p>
+    <p>
+        Applicant's Current Employer:
+        <textarea name="current employer"></textarea><br>
+        Address:<textarea name="Current Employee Street" placeholder="Street"></textarea>,
+        <textarea name="Current Employee City" placeholder="City"></textarea>,
+        <textarea name="Current Employee State" placeholder="State"></textarea>,
+        <textarea name="Current Employee Zip" placeholder="Zip"></textarea><br>
+        Supervisor's Name:<textarea name="supervisor's name"></textarea>
+        Phone:<textarea name="supervisor's phone"></textarea>
+        Fax:<textarea name="supervisor's fax"></textarea><br>
+        Email:<textarea name="Supervisor's email"></textarea><br>
+        Start Date:<textarea name="start date"></textarea>
+        Gross Monthly Income: $<textarea name="gross monthly income"></textarea>
+        Position:<textarea name="position"></textarea>
     </p>
 </body>
 </html>
