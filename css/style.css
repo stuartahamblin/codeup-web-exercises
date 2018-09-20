@@ -1,3 +1,50 @@
+body {
+    background-color: lightsteelblue;
+    background-image: url("../img/octopus.jpeg");
+    Background-position: top;
+    font-family: sans-serif;
+    color: white;
+}
+
 .fancy-header {
     color: purple;
+    text-align: center;
+}
+h2 {
+    color: coral;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: upper-roman;
+}
+#tabletop {
+    color: green;
+}
+
+table {
+    color: blue;
+    font-size: .18in;
+}
+
+th {
+    text-align: left;
+}
+
+tr, td {
+    text-indent: 50px;
+}
+.ohhh {
+    color: yellow;
+}
+
+#exp {
+    color: red;
+}
+a:hover {
+    color: red;
 }
