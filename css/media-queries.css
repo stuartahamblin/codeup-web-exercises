@@ -45,14 +45,32 @@ img {
     font-style: italic;
     font-size: .85em;
 }
-footer {
+footer p {
     font-size: .35em;
     position: relative;
+    top: 6.5em;
 }
 #social-media-links {
     float: right;
 }
-
+.fb {
+    max-width: 50px;
+    min-width: 25px;
+    float: left;
+    display: block;
+}
+.twit {
+    max-width: 50px;
+    min-width: 25px;
+    float: left;
+    display: block;
+}
+.ig {
+    max-width: 50px;
+    min-width: 25px;
+    display: block;
+    float: left;
+}
 @media screen and (min-width:800px) {
     .hidden-on-desktop {
         display: none;
