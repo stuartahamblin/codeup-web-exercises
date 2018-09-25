@@ -3,11 +3,11 @@ body {
 }
 .alert-info {
     width: calc(100% - 36px);
-    background: rgb(214	254	254);
-    border: grey 2px solid;
     text-align: center;
     padding: 1em;
     margin: 1em auto;
+    /*border: grey 2px solid;*/
+    /*background: rgb(214	254	254);*/
 }
 .alert-info a {
     color: dimgrey;
@@ -27,7 +27,6 @@ ul {
 }
 li {
     text-align: center;
-    background: rgb(204	204	204);
     margin: .5em auto;
     width: calc(100% - 2em);
     padding: .75em;
@@ -82,7 +81,7 @@ footer p {
     }
     li {
         display: inline;
-        background: none;
+        /*background: none;*/
         /*float: left;*/
     }
     ul {
@@ -92,13 +91,13 @@ footer p {
     }
     .main{
         float: left;
-        width: calc(60% - 2em);
-        margin: 0 1em;
+        /*width: calc(60% - 2em);*/
+        /*margin: 0 1em;*/
     }
     .sub-section {
         float: left;
-        width: calc(40% - 2em);
-        margin: 0 1em;
+        /*width: calc(40% - 2em);*/
+        /*margin: 0 1em;*/
     }
     footer {
         clear: both;

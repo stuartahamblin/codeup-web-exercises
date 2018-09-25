@@ -2,53 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/grid-layout.css">
     <link rel="stylesheet" href="css/media-queries.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <!--<style>-->
+        <!--li{-->
+            <!--background: rgb(204 204 204);-->
+        <!--}-->
+    <!--</style>-->
     <title>Media Queries</title>
 </head>
 <body>
-    <div class="alert-info hidden-on-desktop">
-        <a href="#main">Skip to main content</a>
-    </div>
-    <h1>Company</h1>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="header-img">
-        <img src="img/890x385.svg" alt="placeholder, imagine multicultural hand holding, or something.">
-    </div>
-    <section id="main" class="main">
-        <h2>Main Section</h2>
-        <p>Amet lorem accusantium maxime quis iusto. Sit aliquid quidem at animi commodi, iusto harum, non. Accusantium sequi consectetur deleniti soluta tempora. Maxime maiores blanditiis veritatis vitae amet maiores sapiente in?</p>
-    </section>
-    <section class="sub-section">
-        <h2>Sub-section</h2>
-        <p>Amet optio quidem voluptatum neque esse at saepe, reiciendis quaerat architecto unde minima aspernatur harum cum totam non amet soluta. Ea quae odio harum magni ab vitae tenetur. Itaque numquam!</p>
-    </section>
-    <footer>
-        <p>(c) 2017 All rights reserved</p>
-        <div id="social-media-links">
-            <div  class="fb">
-                <a href="https://facebook.com">
-                    <img src="img/Facebook_logo_(square).png" alt="Facebook Logo">
-                </a>
-            </div>
-            <div class="twit">
-                <a href="http://twitter.com">
-                    <img src="img/Twitter_logo00.png" alt="Twitter Logo">
-                </a>
-            </div>
-            <div class="ig">
-                <a href="http://instagram.com">
-                    <img src="img/instagram-1675670_960_720.png" alt="Instagram Logo">
-                </a>
-            </div>
+    <main class="container">
+        <div class="alert-info hidden-on-desktop">
+            <a href="#main">Skip to main content</a>
         </div>
-    </footer>
+        <h1>Company</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-img">
+            <img src="img/890x385.svg" alt="placeholder, imagine multicultural hand holding, or something.">
+        </div>
+        <div class="column two-thirds">
+            <section class="main" id="main">
+                <h2>Main Section</h2>
+                <p>Amet lorem accusantium maxime quis iusto. Sit aliquid quidem at animi commodi, iusto harum, non. Accusantium sequi consectetur deleniti soluta tempora. Maxime maiores blanditiis veritatis vitae amet maiores sapiente in?</p>
+            </section>
+        </div>
+        <div class="column one-third">
+            <section class="sub-section">
+                <h2>Sub-section</h2>
+                <p>Amet optio quidem voluptatum neque esse at saepe, reiciendis quaerat architecto unde minima aspernatur harum cum totam non amet soluta. Ea quae odio harum magni ab vitae tenetur. Itaque numquam!</p>
+            </section>
+        </div>
+        <footer>
+            <p>(c) 2017 All rights reserved</p>
+            <div id="social-media-links">
+                <div  class="fb">
+                    <a href="https://facebook.com">
+                        <img src="img/Facebook_logo_(square).png" alt="Facebook Logo">
+                    </a>
+                </div>
+                <div class="twit">
+                    <a href="http://twitter.com">
+                        <img src="img/Twitter_logo00.png" alt="Twitter Logo">
+                    </a>
+                </div>
+                <div class="ig">
+                    <a href="http://instagram.com">
+                        <img src="img/instagram-1675670_960_720.png" alt="Instagram Logo">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
 </body>
 </html>
