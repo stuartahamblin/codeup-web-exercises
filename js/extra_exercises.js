@@ -117,4 +117,4 @@
 // var slicesperperson = parseInt(totalslices/people);
 // alert('Each person gets '+ slicesperperson + ' slice(s)');
 // var remslices = totalslices % people;
-// alert('There are ' + remslices + ' slice(s) remaining')
+// alert('There are ' + remslices + ' slice(s) remaining');

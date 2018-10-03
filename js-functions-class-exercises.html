@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Functions Class Exercises</title>
+</head>
+    <body>
+        <script>
+
+            "use strict";
+
+            function hasLetterA(userString) {
+                var anyA = false;
+                anyA = (userString.toUpperCase().indexOf('A') >= 0);
+                // anyA = (userString.indexOf('a') >= 0)||(userString.indexOf('A') >= 0);
+                return anyA;
+            }
+
+            /*Immediately invoked function*/
+            (function() {
+            })();
+
+            console.log(hasLetterA('b B dhjks'));
+
+        </script>
+    </body>
+</html>
