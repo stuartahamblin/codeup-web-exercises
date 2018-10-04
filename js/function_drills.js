@@ -44,18 +44,43 @@ function identity(input) {
     return input;
 }
 console.log('Howdy!');
+
 // Write a function called `getRandomNumber(min, max)` that returns a random number between min and max values sent to that function call.
+function getRandomNumber(min, max) {
+    var random = Math.floor((Math.random() * max) + min);
+    return random;
+}
+console.log(getRandomNumber(2, 4))
+
 // Write a function called `first(input)` that returns the first character in the provided string.
+function first(input) {
+    return input.substring(0, 1);
+}
+console.log(first('stuart'));
+
 // Write a function called `last(input)` that returns the last character of a string
+function last(inputs) {
+    return inputs.substring(inputs.length-1, inputs.length);
+}
+console.log(last('hamblin'));
+
 // Write a function called `rest(input)` that returns everything but the first character of a string.
+function rest(inputss) {
+    return inputss.substring(1, inputss.length);
+}
+console.log(rest('andrew'));
+
 // Write a function called `reverse(input)` that takes a string and returns it reversed.
+
 // Write a function called `isNumeric(input)` that takes an input and returns a boolean if the input is numeric.
+
 // Write a function called `count(input)` that takes in a string and returns the number of characters.
 // Write a function called `add(a, b)` that returns the sum of a and b
 function add(a, b) {
     return a + b;
 }
 console.log(add(3, 4));
+
 // Write a function called `subtract(a, b)` that return the difference between the two inputs.
 // Write `multiply(a, b)` function that returns the product
 // Write a divide(numerator, denominator) function that returns a divided by b
@@ -65,6 +90,7 @@ function square(numbersq) {
     return numbersq * numbersq;
 }
             // console.log(square(4));
+
 // # Super Duper Gold-Star Bonus
 // Write a function called sumOfSquares(a, b) that uses only your add() function and your square function and not + or * operators
 function sumOfSquares(a, b) {
@@ -76,3 +102,4 @@ console.log(sumOfSquares(3, 4));
 function doMath(operator, a, b) {
     return operator;
 }
+console.log(doMath(add, 2, 3));
