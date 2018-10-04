@@ -10,6 +10,7 @@
  */
 
 function sayHello(name) {
+    var name = "";
     return 'Hello, ' + name + '!';
 }
 // console.log(sayHello('Stuart'));
