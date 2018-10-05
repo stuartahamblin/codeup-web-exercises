@@ -55,26 +55,27 @@
 
 /*SOLUTION*/
 function analyzeColor(colorName) {
+    var colorSentence = '';
     if (colorName === 'blue') {
-        var colorSentance = 'Blue is the color of the sky';
+        colorSentence = 'Blue is the color of the sky';
     } else if (colorName === 'red') {
-        var colorSentance = 'Strawberries are red';
+        colorSentence = 'Strawberries are red';
     } else if (colorName === 'cyan') {
-        var colorSentance = 'I do not know anything about cyan';
+        colorSentence = 'I do not know anything about cyan';
     } else if (colorName === 'orange') {
-        var colorSentance = 'Orange you glad?';
+        colorSentence = 'Orange you glad?';
     } else if (colorName === 'yellow') {
-        var colorSentance = 'Mellow yellow';
+        colorSentence = 'Mellow yellow';
     } else if (colorName === 'green') {
-        var colorSentance = 'Grass is green';
+        colorSentence = 'Grass is green';
     } else if (colorName === 'indigo') {
-        var colorSentance = 'In you go indigo!';
+        colorSentence = 'In you go indigo!';
     } else if (colorName === 'violet') {
-        var colorSentance = 'Why you so violent violet?';
+        colorSentence = 'Why you so violent violet?';
     } else {
-        var colorSentance = 'Do not know that color';
+        colorSentence = 'Do not know that color';
     }
-    return colorSentance;
+    return colorSentence;
 }
 
 // console.log(analyzeColor(red));
@@ -105,8 +106,38 @@ console.log(ranColor);
  */
 
 /*SOLUTION*/
-
-
+// var analyzeColors = 'orange';
+// var colorSentences = '';
+// switch(analyzeColors) {
+//     case 'blue':
+//         colorSentences = 'Blue is the color of the sky';
+//         break;
+//     case 'red':
+//         colorSentences = 'Strawberries are red';
+//         break;
+//     case 'cyan':
+//         colorSentences = 'I do not know anything about cyan';
+//         break;
+//     case 'orange':
+//         colorSentences = 'Orange you glad?';
+//         break;
+//     case 'yellow':
+//         colorSentences = 'Mellow yellow';
+//         break;
+//     case 'green':
+//         colorSentences = 'Grass is green';
+//         break;
+//     case 'indigo':
+//         colorSentences = 'In you go indigo!';
+//         break;
+//     case 'violet':
+//         colorSentences = 'Why you so violent violet?';
+//         break;
+//     default:
+//         colorSentences = 'Do not know that color';
+//         break;
+// }
+// console.log(colorSentences);
 
 // --------------------------------------------------------------------------------------------------------------------
 /**
@@ -117,6 +148,8 @@ console.log(ranColor);
  */
 
 /*SOLUTION*/
+var usercolor = prompt('Enter a color');
+alert(analyzeColor(usercolor));
 
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -141,7 +174,28 @@ console.log(ranColor);
  */
 
 /*SOLUTION*/
-
+var luckyNumber = 4;
+var price = 100;
+function calculateTotal(luckyNumber, price) {
+    var discountPrice = '';
+    if (luckyNumber === 0) {
+        discountPrice = price
+    } else if (luckyNumber === 1) {
+        discountPrice = price * .90;
+    } else if (luckyNumber === 2) {
+        discountPrice = price * .75;
+    } else if (luckyNumber === 3) {
+        discountPrice = price * .65;
+    } else if (luckyNumber === 4) {
+        discountPrice = price * .50;
+    } else if (luckyNumber === 5) {
+        discountPrice = 0;
+    } else {
+        discountPrice = 'invalid';
+    }
+    return discountPrice;
+}
+console.log(calculateTotal(luckyNumber, price));
 
 // --------------------------------------------------------------------------------------------------------------------
 /**
@@ -152,6 +206,10 @@ console.log(ranColor);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
 
 /*SOLUTION*/
+var promptprice = prompt('What was your total bill?');
+alert('Your lucky number was ' + luckyNumber + '.');
+alert('The price before the discount was $' + promptprice + '.');
+alert('The price after the discount is $' + calculateTotal(luckyNumber, promptprice) + '.');
