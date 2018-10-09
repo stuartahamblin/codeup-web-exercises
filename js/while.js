@@ -32,6 +32,7 @@ console.log("WHILE LOOPS START");
 //     x = 2 * x;
 // } while(x <= 65536);
 
+
 // 2) An ice cream seller can't go home until she sells all of her cones. Write a JS program that generates a random number
 // between 50 and 100 representing the amount of cones to sell. Your code should generate numbers between 1 and 5, simulating
 // the amount of cones being bought by her clients. Use a do-while loop to log to the console the amount of cones sold to
@@ -59,6 +60,7 @@ console.log("WHILE LOOPS START");
 //
 // } while ();
 
+
 //ex1)
 // 10
 // 8
@@ -81,6 +83,7 @@ console.log("WHILE LOOPS START");
 //     x = x - 2;
 // } while (x >= -2 );
 
+
 //ex2)
 //
 // 2
@@ -101,6 +104,7 @@ console.log("WHILE LOOPS START");
 // do {console.log(x);
 //     x = x * x;
 // } while (x <= 65536);
+
 
 //ex3
 // 1
@@ -123,6 +127,7 @@ console.log("WHILE LOOPS START");
 //     x = x + 1;
 // } while (x <= 6);
 
+
 //ex3
 // 105
 // 100
@@ -140,6 +145,7 @@ console.log("WHILE LOOPS START");
 // do {console.log(x);
 //     x = x - 5;
 // } while (x >= 95);
+
 
 //ex4
 // 1000000
