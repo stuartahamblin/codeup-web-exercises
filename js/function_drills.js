@@ -72,9 +72,25 @@ console.log(rest('andrew'));
 
 // Write a function called `reverse(input)` that takes a string and returns it reversed.
 
+function reverse(inputr) {
+    return inputr.split("").reverse().join("");
+}
+console.log(reverse("hello"));
+
 // Write a function called `isNumeric(input)` that takes an input and returns a boolean if the input is numeric.
 
+function isNumeric(inputi) {
+    return !isNaN(parseFloat(inputi));
+}
+console.log(isNumeric(617));
+
 // Write a function called `count(input)` that takes in a string and returns the number of characters.
+
+function count(inputco) {
+    return inputco.length;
+}
+console.log(count("alwayspracticing"));
+
 // Write a function called `add(a, b)` that returns the sum of a and b
 function add(a, b) {
     return a + b;
@@ -82,9 +98,33 @@ function add(a, b) {
 console.log(add(3, 4));
 
 // Write a function called `subtract(a, b)` that return the difference between the two inputs.
+
+function subtract(a, b) {
+    return a - b;
+}
+console.log(subtract(1000, 500));
+
 // Write `multiply(a, b)` function that returns the product
+
+function multiply(a, b) {
+    return a * b;
+}
+console.log(multiply(100, 80));
+
 // Write a divide(numerator, denominator) function that returns a divided by b
+
+function divide(num, den) {
+    return num / den;
+}
+console.log(divide(10000, 10));
+
 // Write a remainder(number, divisor) function that returns the remainder left over when dividing `number` by the `divisor`
+
+function remainder(n, d) {
+    return n % d;
+}
+console.log(remainder(1200, 301));
+
 // Write the function `square(a)` that takes in a number and returns the number multiplied by itself.
 function square(numbersq) {
     return numbersq * numbersq;
