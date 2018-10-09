@@ -32,20 +32,20 @@ console.log("BREAK AND CONTINUE START")
 //     Here is an odd number: 47
 //     Here is an odd number: 49
 
-var input = "";
-var guess = "";
-while(input === guess) {
-    if (input === "") {
-        guess = prompt("Enter an odd number between 1 and 50");
-    } else {
-        break;
-    }
-}
-for (var i = 1; i < 50; i += 2) {
-    if (i == guess) {
-        console.log("Yikes! Skipping number: " + i);
-        continue;
-    } else {
-        console.log("Here is an odd number: " + i)
-    }
-}
+// var input = "";
+// var guess = "";
+// while(input === guess) {
+//     if (input === "") {
+//         guess = prompt("Enter an odd number between 1 and 50");
+//     } else {
+//         break;
+//     }
+// }
+// for (var i = 1; i < 50; i += 2) {
+//     if (i == guess) {
+//         console.log("Yikes! Skipping number: " + i);
+//         continue;
+//     } else {
+//         console.log("Here is an odd number: " + i)
+//     }
+// }
