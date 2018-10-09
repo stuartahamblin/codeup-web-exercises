@@ -1,9 +1,10 @@
-console.log("BREAK AND CONTINUE START")
+console.log("BREAK_AND_CONTINUE START")
 
 // 1. Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input.
-// 2. Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
-// 3. Your output should look like this:
 
+// 2. Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
+
+// 3. Your output should look like this:
 //     Number to skip is: 27
 //
 //     Here is an odd number: 1
@@ -32,6 +33,8 @@ console.log("BREAK AND CONTINUE START")
 //     Here is an odd number: 47
 //     Here is an odd number: 49
 
+// PUT IN CONDITIONS FOR A VALID INPUT
+// Answers 2 & 3
 // var input = "";
 // var guess = "";
 // while(input === guess) {
@@ -49,3 +52,22 @@ console.log("BREAK AND CONTINUE START")
 //         console.log("Here is an odd number: " + i)
 //     }
 // }
+
+//Alt Answer 2 & 3
+// var userNumber;
+// do {
+//     userNumber = prompt( "Please enter an odd number between 0 and 50");
+//
+//     if(userNumber % 2 !== 0 && userNumber < 50 && userNumber > 1) {
+//         break;
+//     }
+// } while(true);
+// for (var i = 1; i < 50; i += 2) {
+//     if (i == userNumber) {
+//         console.log("Yikes! Skipping number: " + i);
+//         continue;
+//     } else {
+//         console.log("Here is an odd number: " + i)
+//     }
+// }
+
