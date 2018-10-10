@@ -48,17 +48,22 @@ console.log("WHILE LOOPS START");
 // Cannot sell you 6 cones I only have 3...  // If there are not enough cones
 //     Yay! I sold them all! // If there are no more cones
 
-//COMPLETE this exercise!!!!!
 //Answer
 //
-// var allCones = Math.floor(math.random()*50) + 50;
+// var allCones = Math.floor(Math.random()*50) + 50;
 // console.log("I have " + allCones + " number of cones to sell everybody!");
-//
 // var conesOrdered;
 // do {
-//     conesOrdered = Math.ceil(Math.random()*5);
-//
-// } while ();
+//     conesOrdered = Math.floor(Math.random() * 5) + 1;
+//     if (conesOrdered > allCones) {
+//         console.log('I Cannot sell you '+ conesOrdered +' cones I only have ' + allCones);
+//         continue;
+//     } else {
+//         allCones = allCones - conesOrdered;
+//         console.log(conesOrdered + " cone(s) sold with " + allCones + " remaining");
+//     }
+// } while (allCones !== 0);
+// console.log("Yay! I sold them all!");
 
 
 //ex1)
