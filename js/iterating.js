@@ -9,7 +9,7 @@ console.log("ITERATING.JS START")
      */
 
         // answer
-        // var names = ["Stuart", "Maria", "Benny", "David"];
+        var names = ["Stuart", "Maria", "Benny", "David"];
         // console.log(names);
 
     /**
@@ -18,7 +18,7 @@ console.log("ITERATING.JS START")
      */
 
         // answer
-        // console.log(names.length);
+        // console.log("There are " + names.length + " in the array);
 
     /**
      * Q3: Create log statements that will print each of the names individually by
@@ -48,8 +48,8 @@ console.log("ITERATING.JS START")
      */
 
         // answer
-        // names.forEach(function(element) {
-        //     console.log(element)
+        // names.forEach(function(name) {
+        //     console.log(name)
         // });
 
     /**
@@ -108,7 +108,7 @@ console.log("ITERATING.JS START")
 
 /* 3. Create a function that returns the longest string in a given array of string elements */
 
-        //todo
+        //todo see answer on slack
 
 /*4. Create a function that takes in two arrays of number inputs. If all numbers added together in the first array
 is equal to all the number inputs added in the second array, return true, otherwise, false. Only add together

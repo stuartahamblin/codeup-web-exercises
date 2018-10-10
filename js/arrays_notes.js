@@ -1,5 +1,5 @@
 /*ARRAYS*/
-
+console.log('ARRAYS START');
 
 // An array is a data structure that holds an ordered list of items. Each slot in a JavaScript array can hold any type of data.
 /*instead of:
@@ -55,34 +55,34 @@ while (enterMorecolors) {
 // indices    0  1  2  3
 // Array elements are accessed by adding an opening and closing square bracket with the index of the item to be accessed inside the brackets.
 
-// Here are some examples:
-//
-//
-//     var numbers = [1, 2, 3, 4];
-// console.log(numbers[0]); // 1
-// console.log(numbers[1]); // 2
-// console.log(numbers[2]); // 3
-// console.log(numbers[3]); // 4
-//
-// var shapes = ['square', 'rectangle', 'circle', 'triangle'];
-//
-// console.log('There are ' + shapes.length + ' shapes in the array');
-//
-// console.log('The first shape is: ' + shapes[0]);
-// // The first shape is: square
-//
-// console.log('The second shape is: ' + shapes[1]);
-// // The second shape is: rectangle
-//
-// console.log('The third shape is: ' + shapes[2]);
-// // The third shape is: circle
-//
-// console.log('The fourth shape is: ' + shapes[3]);
-// // The fourth shape is: triangle
-//
-// console.log('The fifth shape is: ' + shapes[4]);
-// // The fifth shape is: undefined
-// When we try to access an index in the array that does not exist, as in that of the fifth shape, we get a value of undefined.
+    // Here are some examples:
+    //
+    //
+    //     var numbers = [1, 2, 3, 4];
+    // console.log(numbers[0]); // 1
+    // console.log(numbers[1]); // 2
+    // console.log(numbers[2]); // 3
+    // console.log(numbers[3]); // 4
+    //
+    // var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+    //
+    // console.log('There are ' + shapes.length + ' shapes in the array');
+    //
+    // console.log('The first shape is: ' + shapes[0]);
+    // // The first shape is: square
+    //
+    // console.log('The second shape is: ' + shapes[1]);
+    // // The second shape is: rectangle
+    //
+    // console.log('The third shape is: ' + shapes[2]);
+    // // The third shape is: circle
+    //
+    // console.log('The fourth shape is: ' + shapes[3]);
+    // // The fourth shape is: triangle
+    //
+    // console.log('The fifth shape is: ' + shapes[4]);
+    // // The fifth shape is: undefined
+    // When we try to access an index in the array that does not exist, as in that of the fifth shape, we get a value of undefined.
 
 // Iterating Arrays
 // To iterate means to repeat a process to achieve a desired result. When you iterate over an array,
@@ -135,39 +135,40 @@ while (enterMorecolors) {
 // CONS: can only increment full array
 // USE: when you want to traverse the whole array
 
-// examples:
-// var pies = ["apple", "cherry", "key lime", "huckleberry"];
-// pies.forEach(function(element, index, array) { ///call on the operations you want to reference
-//     console.log(element); //names need to match
-//     console.log(index);
-//     console.log(array);
-// });
-//------------------
-// var names = ["john", "sally", "fred"];
-// for(var i = 0; i < names.length; i += 1){
-//     console.log(names[i]);
-// }
-//--------------------
-// var names = ["john", "sally", "fred"];
-// names.forEach(function(name) {
-//    console.log(name);
-// });
-//-------------------
-// var names = ["john", "sally", "fred"];
-// function logName(name) {
-//     console.log(name);
-// }
-// names.forEach(logName);
-//-------------------
+    // examples:
+    // var pies = ["apple", "cherry", "key lime", "huckleberry"];
+    // pies.forEach(function(element, index, array) { ///call on the operations you want to reference
+    //     console.log(element); //names need to match
+    //     console.log(index);
+    //     console.log(array);
+    // });
+    //------------------
+    // var names = ["john", "sally", "fred"];
+    // for(var i = 0; i < names.length; i += 1){
+    //     console.log(names[i]);
+    // }
+    //--------------------
+    // var names = ["john", "sally", "fred"];
+    // names.forEach(function(name) {
+    //    console.log(name);
+    // });
+    //-------------------
+    // var names = ["john", "sally", "fred"];
+    // function logName(name) {
+    //     console.log(name);
+    // }
+    // names.forEach(logName);
+    //-------------------
+
 
 /*ARRAY MANIPULATION*/
 
 
-// JavaScript arrays have a variety of methods that allow for manipulation of the array. In this lesson, we will cover some of the most commonly used methods.
-//
-//     Adding Elements
+// JavaScript arrays have a variety of methods that allow for manipulation of the array. In this lesson,
+// we will cover some of the most commonly used methods.
+
+// Adding Elements
 // The push and unshift methods can be used to add items to an array. The primary difference is that push adds an item to the end of an array, and unshift adds an item to the beginning of an array.
-//
 //
 //     var daysOfTheWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday'];
 //
@@ -224,7 +225,6 @@ while (enterMorecolors) {
 
 // Locating Array Elements
 // Before an array is manipulated, it is sometime useful to find the index of a particular item. The indexOf and lastIndexOf array method provide this capability. The indexOf method starts searching from the beginning of an array and will return the first occurrence of what you are looking for. The lastIndexOf starts at the end of the array and works backwards.
-//
 //
 //     var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'red'];
 //

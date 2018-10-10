@@ -100,7 +100,7 @@ console.log("LOOPS BONUSES START");
 // BONUS 3: Write the loop and code necessary to sum all integers
 // between 1 to 100, including 100.
 
-//NOT DONE
+//todo
 var j = 1;
 for (var i = 1; i <= 100; i++) {
 }
@@ -109,4 +109,4 @@ for (var i = 1; i <= 100; i++) {
 //BONUS 4: Write a loop that plays "99 bottles of beer" song. It should say bottle instead of bottles
 // when there's only one, and the song is over when there are 0 bottles.
 
-//NOT DONE
+//todo
