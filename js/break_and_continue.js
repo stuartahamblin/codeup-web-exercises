@@ -33,19 +33,17 @@ console.log("BREAK_AND_CONTINUE START")
 //     Here is an odd number: 47
 //     Here is an odd number: 49
 
-// PUT IN CONDITIONS FOR A VALID INPUT
 // Answers 2 & 3
-// var input = "";
-// var guess = "";
-// while(input === guess) {
-//     if (input === "") {
-//         guess = prompt("Enter an odd number between 1 and 50");
-//     } else {
+// var input;
+// do {
+//     input = prompt("Please enter an odd number between 0 and 50");
+//
+//     if(input < 50 && input > 1 && input % 2 !== 0 ) {
 //         break;
 //     }
-// }
+// } while (true);
 // for (var i = 1; i < 50; i += 2) {
-//     if (i == guess) {
+//     if (i == input) {
 //         console.log("Yikes! Skipping number: " + i);
 //         continue;
 //     } else {
