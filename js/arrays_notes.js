@@ -243,7 +243,6 @@ while (enterMorecolors) {
 // Slicing
 // The .slice method allows us to copy a portion of an array. The slice method optionally takes two arguments to define where the portion we want starts and stops. .slice will not modify the original array; it will return a new array.
 //
-//
 // var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 // var slice = colors.slice(2, 4);
 //
@@ -294,10 +293,11 @@ while (enterMorecolors) {
 // The .split method on strings and the .join method on arrays allow us to transform strings to arrays, and arrays to strings.
 
 // Splitting
-// Splitting will take a string and turn it into an array. String splitting uses a delimiter to decide where the splitting should occur. To split a string, call the split method passing the delimiter as a parameter. For example:
+// Splitting will take a string and turn it into an array. String splitting uses a delimiter to decide where
+// the splitting should occur. To split a string, call the split method passing the delimiter as a parameter.
+// For example:
 //
-//
-//     var namesString = "Joe,Bob,Sally";
+// var namesString = "Joe,Bob,Sally";
 //
 // console.log(namesString);
 // // Joe,Bob,Sally
@@ -307,7 +307,9 @@ while (enterMorecolors) {
 // console.log(namesArray);
 
 // Joining
-// Joining will take an array and convert it to a string with the delimiter of your choice. The join method is available on an array and it takes a delimiter as a parameter. Let's look at the first example again, but in reverse.
+// Joining will take an array and convert it to a string with the delimiter of your choice.
+// The join method is available on an array and it takes a delimiter as a parameter.
+// Let's look at the first example again, but in reverse.
 //
 //
 // var namesArray = ['Joe', 'Bob', 'Sally'];

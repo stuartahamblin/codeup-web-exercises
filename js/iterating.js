@@ -84,31 +84,32 @@ console.log("ITERATING.JS START")
         // }
         // console.log(last(sample));
 
-// })();
 
-// ================================= ARRAY BONUSES
+// -------------------- ARRAY BONUSES
 
 /* 1. Create a function that returns a random day of the week */
 
-        // answer
-        // var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        // function randomday(input) {
-        //     var output = Math.floor(Math.random() * input.length)+1;
-        //     return input[output-1];
-        // }
-        // console.log(randomday(weekdays));
+// answer
+// var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// function randomDay(input) {
+//     var output = Math.floor(Math.random() * input.length)+1;
+//     return input[output-1];
+// }
+// console.log(randomDay(weekdays));
 
 
 /* 2. Create a function that takes a single letter and returns what number the letter is in the alphabet. Ignore case.
 // someFunction("a") // returns 1
 // someFunction("z") // returns 26 */
 
-        // todo
-        var letternumber = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// todo
+function letterNumber(input) {
+    var letterArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+}
 
 /* 3. Create a function that returns the longest string in a given array of string elements */
 
-        //todo see answer on slack
+//todo see answer on slack
 
 /*4. Create a function that takes in two arrays of number inputs. If all numbers added together in the first array
 is equal to all the number inputs added in the second array, return true, otherwise, false. Only add together
@@ -117,4 +118,6 @@ numeric elements but either array may contain non-numeric elements.
 // var arr2 = [2, null, undefined, 0, 2, "apple"]
 // exampleFunction(arr1, arr2) // returns true */
 
-        //todo
+//todo
+
+// })();
