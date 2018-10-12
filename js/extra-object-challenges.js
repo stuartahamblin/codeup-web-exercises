@@ -44,24 +44,32 @@ console.log("EXTRA OBJECT CHALLENGES start");
 // 11, Arthur Herbert, Fonzarelli, 23
 // 12, Betty, Boop, 67
 
-// salesReport = {
-//      title:
-//      date:
-//      office:
-//      employees: [{
-//                  employee-number
-//                  },
-//                  {
-//                  first-name
-//                  },
-//                  {
-//                  last-name
-//                  },
-//                  {
-//                  sales-units
-//                  }
-//                  ]
-// }
+
+var salesReport = {
+     title: "Monthly Sales Report",
+     date: "03-17-2015",
+     office: "Codeup",
+     employees: [{}
+    ]
+};
+console.log(salesReport);
+
+
+
+
+var employees = [{
+        employeeNumber: 1,
+        firstName: "Jane",
+        lastName: "Janeway",
+        salesUnits: 3
+    },
+    {
+        employeeNumber: 1,
+        firstName: "Trici",
+        lastName: "Triciason",
+        salesUnits: 5
+    },
+];
 
 // Exercise 3. On the salesReport object you made, add the following methods.
 // getEmployeeCount() should return the total number of employees
