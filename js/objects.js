@@ -19,6 +19,7 @@
         // console.log(person.firstName); // "Rick"
         // console.log(person.lastName); // "Sanchez"
 
+
     /**
      * QUESTION: Add a sayHello method to the person object that returns a greeting using
      * the firstName and lastName properties.
@@ -33,6 +34,7 @@
         //     return console.log("Hello from " + this.firstName + " " + this.lastName);
         // };
         // console.log(person.sayHello()); // "Hello from Rick Sanchez!"
+
 
     /**
      * QUESTION: HEB has an offer for the shoppers that buy products amounting to
@@ -64,14 +66,47 @@
         //     }
         //     return finalDiscount;
         // }
-        // // console.log(discount(100));
-        //
         //     shoppers.forEach(function(shop) {
         //         console.log("Name: " + shop.name);
         //         console.log("Amount before the discount was " + shop.amount);
         //         console.log("Discount was " + discount(shop.amount));
-        //         console.log("Amount after discount is "+ (shop.amount - discount(shop.amount)))
+        //         console.log("Amount after discount is "+ (shop.amount - discount(shop.amount)));
         //     });
+
+        // ALT ANSWER
+        // var shoppers = [
+        //         {name: 'Cameron', amount: 180},
+        //         {name: 'Ryan', amount: 250},
+        //         {name: 'George', amount: 320}
+        //         ];
+        // function calculateDiscount(amount){
+        //     var finalAmount = 0;
+        //     var amountOff = 0;
+        //     if (amount > 200) {
+        //         amountOff = amount * .12;
+        //         finalAmount = amount - amountOff;
+        //     } else {
+        //         finalAmount = amount;
+        //     }
+        //     return {
+        //         finalAmount: finalAmount,
+        //         amountOff: amountOff
+        //     }
+        // }
+        // function displayShopperInfo(shoppers) {
+        //     shoppers.forEach(function(shopper) {
+        //         var amount = calculateDiscount(shopper.amount);
+        //         var message = "";
+        //         message += shopper.name + " bought $";
+        //         message += shopper.amount.toFixed(2);
+        //         message += " and got $" + amount.amountOff.toFixed(2);
+        //         message += " off and will pay $";
+        //         message += amount.finalAmount.toFixed(2) + ".";
+        //         console.log(message);
+        //     });
+        // }
+        // displayShopperInfo(shoppers);
+
 
     /**
      * QUESTION: Create an array of objects that represent books and store it in a
@@ -87,44 +122,45 @@
      */
 
         //ANSWER
-        var books = [
-            {
-                title: "Anna Karenina",
-                author: {
-                    firstName: "Leo",
-                    lastName: "Tolstoy"
-                    }
-            },
-            {
-                title: "Madame Bovary",
-                author: {
-                    firstName: "Gustave",
-                    lastName: " Flaubert"
-                }
-            },
-            {
-                title: "War and Peace",
-                author: {
-                    firstName: "Leo",
-                    lastName: "Tolstoy"
-                }
-            },
-            {
-                title: "The Adventures of Huckleberry Finn",
-                author: {
-                    firstName: "Mark",
-                    lastName: " Twain"
-                }
-            },
-            {
-                title: "The Stories of Anton Chekhov",
-                author: {
-                    firstName: "Anton",
-                    lastName: "Chekhov"
-                }
-            },
-        ];
-        console.log(books);
+        // var books = [
+        //     {
+        //         title: "Anna Karenina",
+        //         author: {
+        //             firstName: "Leo",
+        //             lastName: "Tolstoy"
+        //             }
+        //     },
+        //     {
+        //         title: "Madame Bovary",
+        //         author: {
+        //             firstName: "Gustave",
+        //             lastName: " Flaubert"
+        //         }
+        //     },
+        //     {
+        //         title: "War and Peace",
+        //         author: {
+        //             firstName: "Leo",
+        //             lastName: "Tolstoy"
+        //         }
+        //     },
+        //     {
+        //         title: "The Adventures of Huckleberry Finn",
+        //         author: {
+        //             firstName: "Mark",
+        //             lastName: " Twain"
+        //         }
+        //     },
+        //     {
+        //         title: "The Stories of Anton Chekhov",
+        //         author: {
+        //             firstName: "Anton",
+        //             lastName: "Chekhov"
+        //         }
+        //     },
+        // ];
+        // console.log(books);
+
 
     /**
      * QUESTION: Loop through the books array and output the following information about
@@ -157,6 +193,18 @@
         //         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
         //     });
 
+        // ALT ANSWER
+        // for (var i = 0; i < books.length; i += 1) {
+        //     var message = "";
+        //     message += "Book # " + (i+1) + "\n";
+        //     message += "Title: " + books[i].title + "\n";
+        //     message += "Author: " + books[i].author.firstName + " ";
+        //     message += books[i].author.lastName + "\n";
+        //     message += "---";
+        //     console.log(message)
+        // }
+
+
     /**
      *  QUESTION BONUS:
      * - Create a function named `createBook` that accepts a title and author
@@ -168,25 +216,53 @@
      *   `showBookInfo` function.
      */
 
-        //TODO
-        function createBook(title, author) {
-            var book = {
-                title: title,
-                author: author
-            };
-            return book
-        }
-        console.log(createBook("Harry Potter", "J.K.Rowling"));
+        // ANSWER
 
-        function createBooks(title, firstName, lastName) {
-            books = [];
-            books = {
-                title: title,
-                author: {
-                    firstName: firstName,
-                    lastName: lastName
-                }
-            }
-        }
+        // function createBook(title, author) {     //returns book with properties
+        //     var book = {
+        //         title: title,
+        //         author: author
+        //     };
+        //     return book
+        // }
+        // console.log(createBook("Harry Potter", "J.K.Rowling"));
+
+        // function createBooks() {     //refactored code that returns books array
+        //     var books = [];
+        //     do {
+        //         var title = prompt("What is the title of the book you want to add?");
+        //         var firstName = prompt("What is the author's first name?");
+        //         var lastName = prompt("What is the author's last name?");
+        //         var book = {
+        //             title: title,
+        //             author: {
+        //                 firstName: firstName,
+        //                 lastName: lastName
+        //             }
+        //         };
+        //         books.push(book);
+        //         var newBook = confirm("Do you want to add another book");
+        //     } while (newBook === true);
+        //     // console.log(books);
+        //     return books;
+        // }
+        // console.log(createBooks());
+
+        // var book = {     // sample book object
+        //     title: "title",
+        //         author: {
+        //         firstName: "first",
+        //             lastName: "last"
+        //     }
+        // };
+
+        // function showBookInfo(object) {       //return
+        //     console.log("Title: " + object.title);
+        //     console.log("Author: " + object.author.firstName + " " + object.author.lastName);
+        //     return "-------------------";
+        // }
+        // books.forEach(function(book){
+        //     showBookInfo(book);
+        // });
 
 })();

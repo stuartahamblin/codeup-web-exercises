@@ -8,6 +8,17 @@ console.log("EXTRA OBJECT CHALLENGES start");
 // Exercise 1. Write a function called makeCar that takes in two strings, make and model, and returns an object with those properties
 // Example: makeCar("VW", "beetle") returns the object {"make": "VW", "model", "beetle"}
 
+    // ANSWER
+    // function makeCar(make, model){
+    //     car = {
+    //         "make": make,
+    //         "model": model
+    //     };
+    //     return car;
+    // }
+    // console.log(makeCar("VW", "model"));
+
+
 // Exercise 2. Use the following data to create an object named salesReport.
 //     The object should have the following properties:
 //       title, date, office, and employees.
@@ -32,6 +43,25 @@ console.log("EXTRA OBJECT CHALLENGES start");
 // 10, Henry, Kissinger, 1
 // 11, Arthur Herbert, Fonzarelli, 23
 // 12, Betty, Boop, 67
+
+// salesReport = {
+//      title:
+//      date:
+//      office:
+//      employees: [{
+//                  employee-number
+//                  },
+//                  {
+//                  first-name
+//                  },
+//                  {
+//                  last-name
+//                  },
+//                  {
+//                  sales-units
+//                  }
+//                  ]
+// }
 
 // Exercise 3. On the salesReport object you made, add the following methods.
 // getEmployeeCount() should return the total number of employees
