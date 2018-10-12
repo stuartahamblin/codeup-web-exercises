@@ -19,7 +19,6 @@ function waitTwoSecondsAndAlert() {
 
 document.querySelector("#alert").addEventListener('click', function() {
     waitTwoSecondsAndAlert();
-    // todo - update the timer every second
 });
 
 
@@ -66,4 +65,5 @@ document.querySelector("#countdown").addEventListener("click", function() {
         console.log("interval function called");
 
     }, 1000);
+
 });
