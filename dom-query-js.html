@@ -25,10 +25,10 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
-<button id="button1">button #1</button>
-<button id="button2">button #2</button>
-<button id="button3">button #3</button>
-<button id="button4">button #4</button>
+<button id="button1">Main-Header</button>
+<button id="button2">Sub Header</button>
+<button id="button3">List Colors</button>
+<button id="button4">Change Paragraph</button>
 
 <script>
     (function() {
@@ -43,10 +43,10 @@
                 };
 
                 var button1 = document.getElementById('button1');
-                button1.addEventListener('click', javaMain, false);
+                button1.addEventListener('click', javaMain);
 
         // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById("sub-header");
+                var subHeader = document.getElementById("sub-header");
 
         //alt
         // var subHeader = document.querySelector("#sub-header");
@@ -59,13 +59,12 @@
                 };
 
                 var button2 = document.getElementById('button2');
-                button2.addEventListener('click', subBlue, false);
+                button2.addEventListener('click', subBlue);
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName("li");
-        for (var i = 0; i < listItems.length; i += 1) {
-            console.log(listItems[i]);
-        }
+                var listItems = document.getElementsByTagName("li");
+                for (var i = 0; i < listItems.length; i += 1) {
+                }
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
@@ -81,11 +80,10 @@
                 };
 
                 var button3 = document.getElementById('button3');
-                button3.addEventListener('click', listColor, false);
+                button3.addEventListener('click', listColor);
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        console.log(subParagraphs);
+                var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
@@ -94,7 +92,7 @@
                 };
 
                 var button4 = document.getElementById('button4');
-                button4.addEventListener('click', missionParagraph, false);
+                button4.addEventListener('click', missionParagraph);
 
         // Please follow the instructions below.
         //     1. Open the HTML file named dom-query-js.html that you created in the last lesson.
@@ -103,6 +101,7 @@
         //        set inner html of mainHeader to "JavaScript is Cool".
         //     3. View the results in your browser to test for the expected output.
         //     4. Finally, save your work, commit the changes to your git repository, and push to GitHub.
+
 
     })();
 </script>

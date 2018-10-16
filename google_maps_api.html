@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+<!-- div to hold map -->
+<div id="map-canvas"></div>
+
+<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_GOES_HERE"></script>
+
+<!-- Script to show address on map -->
+<script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            // zoom: 5,
+            // zoom: 15,
+            zoom: 20,
+
+            // This sets the center of the map at our location
+            center: {
+                lat:  32.2231891,
+                lng: -110.9693147
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            // Create lat and long for our marker position
+        var pocaCosa = { lat: 32.2231, lng: -110.9693147 };
+            // Add the marker to our existing map
+        var marker = new google.maps.Marker({
+            position: pocaCosa,
+            map: map
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+            content: "Upscale authentic mexican cuisine! Locally owned!"
+        });
+
+        infowindow.open(map, marker);
+
+        /*Bonuses:*/
+            // -Info windows can contain basic HTML, not just plain text. Add some addition information about
+            //  your restaurant to the info window such as why it is your favorite, dishes you like, etc.
+
+            // -Research Google Maps Events. Make sure the info window
+            //  does not display until the marker has been clicked on.
+
+            // -Add a drop animation to the marker when the page first loads.
+
+            // -Refactor your code to display at least three favorite restaurants with information about each.
+            //  You should create an array of objects with information about each restaurant to accomplish this.
+            //  You will most likely need to use a .forEach() loop rather than a for.
+
+            // -Replace the generic marker icon with an image that is more appropriate for each restaurant.
+
+    })();
+</script>
+</body>

@@ -1020,47 +1020,102 @@ var profiles = [
 // Exercise 5. Create an object named profileReport and add the following methods that use the "profiles" JSON data.
 //  getProfileCount() should return the total number of profiles
 
-function getProfileCount(json){
-    return json.length
-}
-console.log(getProfileCount(profiles));
+    function getProfileCount(json){
+        return json.length
+    }
+    console.log(getProfileCount(profiles));
 
 
 //  getActiveCount() should return the number of active profiles
-function getActiveCount(json){
-    var count = 0;
-    for(i = 0; i < json.length; i++){
-        count = count + json[i].isActive;
+    function getActiveCount(json){
+        var count = 0;
+        for(i = 0; i < json.length; i++){
+            count = count + json[i].isActive;
+        }
+        return count;
     }
-    return count;
-}
-console.log(getActiveCount(profiles));
+    console.log(getActiveCount(profiles));
 
 
  // getInactiveCount() should return the number of inactive profiles
-function getInactiveCount(json){
-    var count = 0;
-    for(i = 0; i < json.length; i++){
-        var val = json[i].isActive;
-        if (val === false) {
-            count = count + 1;
+    function getInactiveCount(json){
+        var count = 0;
+        for(i = 0; i < json.length; i++){
+            var val = json[i].isActive;
+            if (val === false) {
+                count = count + 1;
+            }
         }
+        return count;
     }
-    return count;
-}
-console.log(getInactiveCount(profiles));
+    console.log(getInactiveCount(profiles));
 
 
-//  sumOfAllBalances() should return sum of the balance of all profiles
-// function sumOfAllBalances(){
-//     return
+// sumOfAllBalances() should return sum of the balance of all profiles
+    function sumOfAllBalances(json) {
+        var balance = 0;
+        for(i = 0; i < json.length; i++) {
+            balance = balance + parseFloat(json[i].balance.replace(/[^0-9.-]+/g, ''));
+        }
+        return balance;
+    }
+    console.log(sumOfAllBalances(profiles));
+
+
+ // getAverageBalance() should return the average balance per users
+    function getAverageBalance(json) {
+        var balance = 0;
+        for(i = 0; i < json.length; i++) {
+            balance = balance + parseFloat(json[i].balance.replace(/[^0-9.-]+/g, ''));
+        }
+        var averageBalance = balance/json.length;
+        return averageBalance.toFixed(2);
+    }
+    console.log(getAverageBalance(profiles));
+
+
+//  getLowestBalance() should return the customer name with the lowest balance
+    function getLowestBalance(json) {
+        var lowBalance = json[0].balance.replace(/[^0-9.-]+/g, '');
+        for(i = 0; i < json.length; i++) {
+            if(lowBalance > json[i].balance.replace(/[^0-9.-]+/g, '')){
+                lowBalance = json[i].balance.replace(/[^0-9.-]+/g, '');
+            }
+        }
+        return lowBalance;
+    }
+    console.log(getLowestBalance(profiles));
+
+
+//  getHighestBalance() should return the customer name with the highest balance
+    function getHighestBalance(json) {
+        var hiBalance = json[0].balance.replace(/[^0-9.-]+/g, '');
+        for(i = 0; i < json.length; i++) {
+            if(hiBalance < json[i].balance.replace(/[^0-9.-]+/g, '')){
+                hiBalance = json[i].balance.replace(/[^0-9.-]+/g, '');
+            }
+        }
+        return hiBalance;
+    }
+    console.log(getHighestBalance(profiles));
+
+
+//  getMostFavoriteFruit() should return the most common fruit
+//TODO
+// var mostFavFruit =;
+//
+// for(i = 0; i < profiles.length; i++) {
+//     var compairFruit = profiles[i].favoriteFruit;
+//     var count = 0;
+//     for (i = 0; i < profiles.length; i++) {
+//         if (compairFruit === profiles[i].favoriteFruit) {
+//             count = count + 1;
+//         }
+//     }
+//     console.log(count);
 // }
 
 
-//  getAverageBalance() should return the average balance per users
-//  getLowestBalance() should return the customer name with the lowest balance
-//  getHighestBalance() should return the customer name with the highest balance
-//  getMostFavoriteFruit() should return the most common fruit
 //  getLeastFavoriteFruit() should return the least favorite fruit
 //  getTotalNumberOfUnreadMessages() should return the number of unread messages for all users
 //  getAverageNumberOfUnreadMessages() should return the average number of unread mesages per user.

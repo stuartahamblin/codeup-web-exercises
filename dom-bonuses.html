@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+    <div id="div1">
+        <p id="p1"></p>
+    </div>
     <script>
 
         // BONUS 1 (grocery list APP)
@@ -13,10 +16,24 @@
         // - for each item in the array of items create a new li element with the correct text and append to the DOM
         // - for a simpler alternative, build an entire HTML string and set the innerHTML of an existing <ul> element
 
+        //todo
+        var para = document.createElement("p");
+        var node = "";
+        do {
+            node += document.createTextNode(prompt("input?"));
+        } while (node !== "");
+        para.appendChild(node);
+        var element = document.getElementById("div1");
+        var child = document.getElementById("p1");
+        element.insertBefore(para, child);
+
+
         // BONUS 2 (custom styling)
         // In the same dom-bonuses.html page, allow the user to select custom styling for the page by setting the
         // background color, font color, and font-family for the page. Add additional style changes to have fun and
         // experiment!
+
+        //todo
 
         // BONUS 3 (profile create form)
         // Create a form that will allow the user to enter the following information in text inputs:
@@ -37,10 +54,14 @@
         // 3) reset button to reset the time to zero
         // 4) pause button to stop the stop watch
 
+        //todo
+
         // Additional Features:
         // 1) store a list of times in an aside div that are appended to every time the reset button is hit
         // 2) add delete buttons for each stored time that removes the time from the aside div
         // 3) add keyboard events to control starting, pausing, and resetting
+
+        //todo
 
         // BONUS 2 - create a Hangman game
         // Allow user 1 to enter a random word for user 2 to try to guess.
@@ -50,8 +71,11 @@
         // - a form should allow the user to type a letter guess
         // - do not accept inputs that are more than one letter or are not letters (ignore case)
 
+        //todo
+
         // BONUS 3 - Create a zoomable font size effect with mouse scroll
 
+        //todo
     </script>
 </body>
 </html>
