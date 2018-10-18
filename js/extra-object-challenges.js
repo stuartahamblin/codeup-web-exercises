@@ -1232,20 +1232,57 @@ var profiles = [
 
 
 //  getAllCompanyNames() should return an array of all companies represented by the users
-function getAllCompanyNames(json){
-    var companyNames = [];
-    json.forEach(function (jso) {
-        companyNames.push(jso.company);
+    function getAllCompanyNames(json){
+        var companyNames = [];
+        json.forEach(function (jso) {
+            companyNames.push(jso.company);
+            return companyNames
+        });
         return companyNames
-    });
-    return companyNames
-}
-console.log(getAllCompanyNames(profiles));
+    }
+    console.log(getAllCompanyNames(profiles));
 
 
 //  getMostCommonEyeColor() should return the most commonly occuring eye-color.
+    function getMostCommonEyeColor(json) {
+        var maxEyeCount = 0;
+        var maxEyeColor = 0;
+        for (var i = 0; i < json.length; i++) {
+            var compairEye = json[i].eyeColor;
+            var eyeCount = 0;
+            for (j = 0; j < json.length; j++) {
+                if (compairEye === json[j].eyeColor) {
+                    eyeCount = eyeCount + 1;
+                }
+            }
+            if (eyeCount > maxEyeCount) {
+                maxEyeCount = eyeCount;
+                maxEyeColor = compairEye;
+            }
+        }
+        return maxEyeColor;
+    }
+    console.log(getMostCommonEyeColor(profiles));
+
+
 //  getBalancesForActiveAndNonActive() should return the balance of all non-active accounts vs. the balance of all active accounts?
 //     this last method should return an object that looks like {"active-balances": 23000, "inactive-balances": 4000} w/ different numbers.
+    function getBalancesForActiveAndNonActive(json) {
+        var activeBalances = 0;
+        var inactiveBalances = 0;
+        for (i = 0; i < json.length; i++) {
+            if (json[i].isActive) {
+            activeBalances = activeBalances + parseFloat(json[i].balance.replace(/[^0-9.-]+/g, ''));
+            } else {
+                inactiveBalances = inactiveBalances + parseFloat(json[i].balance.replace(/[^0-9.-]+/g, ''));
+            }
+        }
+        return{
+                "active-balances": activeBalances.toFixed(2),
+                "inactive-balances": inactiveBalances.toFixed(2)
+            };
+    }
+    console.log(getBalancesForActiveAndNonActive(profiles));
 
 
 // Exercise 6. Practice with assignment by reference
@@ -1267,3 +1304,4 @@ console.log(getAllCompanyNames(profiles));
 // now, run inputElement.value = "I am altering an object by altering its properties" in your JS console.
 // See how both the "input" and "textInput" varialbes are referencing the same underlying HTML element?
 // This behavior is another example of "assignment by reference"
+
