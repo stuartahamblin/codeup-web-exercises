@@ -1100,28 +1100,149 @@ var profiles = [
     console.log(getHighestBalance(profiles));
 
 
-//  getMostFavoriteFruit() should return the most common fruit
-//TODO
-// var mostFavFruit =;
-//
-// for(i = 0; i < profiles.length; i++) {
-//     var compairFruit = profiles[i].favoriteFruit;
-//     var count = 0;
-//     for (i = 0; i < profiles.length; i++) {
-//         if (compairFruit === profiles[i].favoriteFruit) {
-//             count = count + 1;
-//         }
-//     }
-//     console.log(count);
-// }
+ // getMostFavoriteFruit() should return the most common fruit
+    function getMostFavoriteFruit(json) {
+        var maxCount = 0;
+        var maxFruit = 0;
+        for (var i = 0; i < json.length; i++) {
+            var compairFruit = json[i].favoriteFruit;
+            var count = 0;
+            for (j = 0; j < json.length; j++) {
+                if (compairFruit === json[j].favoriteFruit) {
+                    count = count + 1;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                maxFruit = compairFruit;
+            }
+        }
+        return maxFruit;
+    }
+    console.log(getMostFavoriteFruit(profiles));
+
+    // ALT answer
+    // function getMostFavoriteFruit(json) {
+    //     var maxCount = 0;
+    //     var maxFruit = 0;
+    //     json.forEach(function(js){
+    //         var compairFruit = js.favoriteFruit;
+    //         var count = 0;
+    //         json.forEach(function(){
+    //             if (compairFruit === js.favoriteFruit) {
+    //                 count = count + 1;
+    //             }
+    //             return count;
+    //         });
+    //         if (count > maxCount) {
+    //             maxCount = count;
+    //             maxFruit = compairFruit;
+    //         }
+    //         return maxFruit;
+    //     });
+    //     return maxFruit;
+    // }
+    // console.log(getMostFavoriteFruit(profiles));
 
 
 //  getLeastFavoriteFruit() should return the least favorite fruit
+    function getLeastFavoriteFruit(json) {
+        var minCount = json.length;
+        var minFruit = json[0].favoriteFruit;
+        for (var i = 0; i < json.length; i++) {
+            var compairFruit = json[i].favoriteFruit;
+            var count = 0;
+            for (j = 0; j < json.length; j++) {
+                if (compairFruit === json[j].favoriteFruit) {
+                    count = count + 1;
+                }
+            }
+            if (count < minCount) {
+                minCount = count;
+                minFruit = compairFruit;
+            }
+        }
+        return minFruit;
+    }
+    console.log(getLeastFavoriteFruit(profiles));
+
+
 //  getTotalNumberOfUnreadMessages() should return the number of unread messages for all users
+    function getTotalNumberOfUnreadMessages(json){
+        var unread = 0;
+        for (i = 0; i < json.length; i++) {
+            var greeting = json[i].greeting;
+            var unreadLocation = greeting.indexOf("unread");
+            var youHaveLocation = greeting.indexOf("You have");
+            unre = greeting.substring(youHaveLocation + 9, unreadLocation - 1);
+            unread = unread + parseFloat(unre);
+        }
+        return unread
+    }
+    console.log(getTotalNumberOfUnreadMessages(profiles));
+
+
 //  getAverageNumberOfUnreadMessages() should return the average number of unread mesages per user.
+    function getAverageNumberOfUnreadMessages(json){
+        var unread = 0;
+        for (i = 0; i < json.length; i++) {
+            var greeting = json[i].greeting;
+            var unreadLocation = greeting.indexOf("unread");
+            var youHaveLocation = greeting.indexOf("You have");
+            unre = greeting.substring(youHaveLocation + 9, unreadLocation - 1);
+            unread = unread + parseFloat(unre);
+        }
+        unread = unread / json.length;
+        return unread.toFixed(2)
+    }
+    console.log(getAverageNumberOfUnreadMessages(profiles));
+
+
 //  getAverageAge() should return the average age of all users
+    function getAverageAge(json) {
+        var age = 0;
+        json.forEach(function (js) {
+            age = age + js.age;
+            return age
+        });
+        var aveAge = age / json.length;
+        aveAge = aveAge.toFixed(2);
+        return aveAge;
+    }
+    console.log(getAverageAge(profiles));
+
+
 //  getGenderCounts() should return gender count of users as an object: example {"m": 23, "f", 32}
+    function getGenderCounts(json) {
+        var maleCount = 0;
+        var femaleCount = 0;
+        json.forEach(function (jso) {
+            if (jso.gender === "male") {
+                maleCount = maleCount + 1;
+            } else {
+                femaleCount = femaleCount + 1;
+            }
+        });
+        return {
+            "m": maleCount,
+            "f": femaleCount
+            };
+    }
+    console.log(getGenderCounts(profiles));
+
+
 //  getAllCompanyNames() should return an array of all companies represented by the users
+function getAllCompanyNames(json){
+    var companyNames = [];
+    json.forEach(function (jso) {
+        companyNames.push(jso.company);
+        return companyNames
+    });
+    return companyNames
+}
+console.log(getAllCompanyNames(profiles));
+
+
 //  getMostCommonEyeColor() should return the most commonly occuring eye-color.
 //  getBalancesForActiveAndNonActive() should return the balance of all non-active accounts vs. the balance of all active accounts?
 //     this last method should return an object that looks like {"active-balances": 23000, "inactive-balances": 4000} w/ different numbers.
