@@ -18,10 +18,10 @@ var a2 = [4, 5, 6];
 
 // Exercise 1. Write a function named secondToLast() that returns the second to last element
 
-    // function secondToLast(input1) {
-    //     return input1[input1.length - 2];
-    // }
-    // console.log(secondToLast(sample));
+    function secondToLast(input1) {
+        return input1[input1.length - 2];
+    }
+    console.log(secondToLast(sample));
 
 
 // Exercise 2. Write a function named rest() that takes an an array and returns an array containing everything except the first element.
@@ -81,11 +81,13 @@ var a2 = [4, 5, 6];
 // Exercise 5. Write a function named getUniqueValues that takes in an array and returns the array without any duplicates
 // Example: getUniqueValues(["a", "b", "a", "b", "c", "c"]) should return ["a", "b", "c"]
 
-    // todo
+    // arrayFive = ["a", "b", "a", "b", "c", "c"];
     // function getUniqueValues(input) {
-    //     return
+    //     return input.sort().filter(function(item, pos, ary) {
+    //         return !pos || item != ary[pos - 1];
+    //     })
     // }
-
+    // console.log(getUniqueValues(arrayFive));
 
 // Exercise 6. Write a function named reverseArray that takes in an array and returns it reversed, but without altering the original array.
 
@@ -114,16 +116,6 @@ var a2 = [4, 5, 6];
     // console.log(getRandomQuote(quotes));
 
 
-// var quotes = ["You're the best", "I love you", "Danks"];
-// console.log(quotes);
-// var randomNumber = Math.floor((Math.random() * quotes.length));
-// console.log(randomNumber);
-// quotes[randomNumber];
-// console.log(quotes[randomNumber]);
-
-    //todo
-
-
 // Exercise 8. Write a function named getIndexesOf() that takes in two arguments.
 // The first argument should be a specific numeral or character
 // The second argument should be any given string
@@ -131,8 +123,17 @@ var a2 = [4, 5, 6];
 // Example: getIndexesOf("a", "banana") should return the array [1, 3, 5]
 // Example: getIndexesOf("z", "banana") should return an empty array [] since there are no "z" characters in "banana"
 
-    //todo
-
+    // function getIndexesOf(character, string) {
+    //     var arrayEight = [];
+    //     for (i = 0; i < string.length; i++) {
+    //         var letterEight = string.substring(i, i+1);
+    //         if (letterEight === character) {
+    //             arrayEight.push(i);
+    //         }
+    //     }
+    //     return arrayEight
+    // }
+    // console.log(getIndexesOf("a", "banana"));
 
 // Exercise 9. Write a function named removeAll.
 // It should accept an array and a value
@@ -142,8 +143,17 @@ var a2 = [4, 5, 6];
 // Example: removeAll([1, 2, 3], 2) should return [1, 3]
 // Example 2: removeAll([2, 2, 3, 4, 5, 2, 2], 2) should return [3, 4, 5]
 
-    //todo
-
+    // function removeAll(array, character) {
+    //     var arrayNine = [];
+    //     for (i = 0; i < array.length; i++) {
+    //         var compareCharacter = array[i];
+    //         if (compareCharacter !== character) {
+    //             arrayNine.push(array[i]);
+    //         }
+    //     }
+    //     return arrayNine
+    // }
+    // console.log(removeAll([1, 2, 3], 2));
 
 // Exercise 10. Write a function named firstTenFibonacciNumbers() that returns an array of the first ten fibonacci numbers
 
@@ -187,4 +197,12 @@ var a2 = [4, 5, 6];
 // Example: zip([1, 2, 3], [4, 5, 6]) returns [[1, 4], [2, 5], [3, 6])
 // Example: zip(["a", "b", "c"], ["x", "y", "z"]) returns [["a", "x"], ["b", "y"], ["c", "z"]]
 
-    //todo
+    // function zip(array1, array2) {
+    //     output13 = [];
+    //     for (i = 0; i < array1.length; i++) {
+    //         var SubArray13 = [array1[i], array2[i]];
+    //         output13.push(SubArray13);
+    //     }
+    //     return output13;
+    // }
+    // console.log(zip([1, 2, 3], [4, 5, 6]));

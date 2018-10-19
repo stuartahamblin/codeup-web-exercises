@@ -1287,7 +1287,17 @@ var profiles = [
 
 // Exercise 6. Practice with assignment by reference
 // create a variable named person1 with a name property. Assign it a name property.
+
+var person1 = {
+    'name': 'Stuart Hamblin'
+};
+console.log(person1);
+
 // Now create a variable named person2 and assign person1 to it.
+
+var person2 = person1.name;
+console.log(person2);
+
 // Then reassign the name property on person2 with person2.name = "Bob";
 // console.log the name property on person 1.
 // Why do you think changing person2 altered person1?
