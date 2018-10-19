@@ -1232,15 +1232,15 @@ var profiles = [
 
 
 //  getAllCompanyNames() should return an array of all companies represented by the users
-    function getAllCompanyNames(json){
-        var companyNames = [];
-        json.forEach(function (jso) {
-            companyNames.push(jso.company);
-            return companyNames
-        });
-        return companyNames
-    }
-    console.log(getAllCompanyNames(profiles));
+//     function getAllCompanyNames(json){
+//         var companyNames = [];
+//         json.forEach(function (jso) {
+//             companyNames.push(jso.company);
+//             return companyNames
+//         });
+//         return companyNames
+//     }
+//     console.log(getAllCompanyNames(profiles));
 
 
 //  getMostCommonEyeColor() should return the most commonly occuring eye-color.
@@ -1289,7 +1289,7 @@ var profiles = [
 // create a variable named person1 with a name property. Assign it a name property.
 
 var person1 = {
-    'name': 'Stuart Hamblin'
+    'name': 'Assessment Start--------'
 };
 console.log(person1);
 
