@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!--Exercises-->
+<!--Continue working in jquery_exercises.html for these exercises. Make sure you are committing your changes to GitHub.-->
+
+<!--Id Selectors-->
+<!--Create content in your HTML file using at least the following elements: h1, p, ul, li, div.-->
+<!--Add several attributes to your elements; you will need both id and class attributes.-->
+<!--Use jQuery to select an element by the id. Alert the contents of the element.-->
+<!--Update the jQuery code to select and alert a different id.-->
+<!--Use the same id on 2 elements. How does this change the jQuery selection?-->
+<!--Remove the duplicate id. Each id should be unique on that page.-->
+
+<!--Class Selectors-->
+<!--Remove your custom jQuery code from previous exercises.-->
+<!--Update your code so that at least 3 different elements have the same class named codeup.-->
+<!--Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.-->
+<!--Remove the class from one of the elements. Refresh and test that the border has been removed.-->
+<!--Give another element an id of codeup. Does this element get a border now?-->
+<!--Element Selectors-->
+<!--Remove your custom jQuery code from previous exercises.-->
+<!--Using jQuery, set the font-size of all li elements to 20px.-->
+<!--Craft selectors that highlight all the h1, p, and li elements.-->
+<!--Create a jQuery statement to alert the contents of your h1 element(s).-->
+<!--Multiple Selectors-->
+<!--Combine your selectors that highlight all the h1, p, and li elements.-->
+
 <head>
     <meta charset="UTF-8">
     <title>jquery Exercise</title>
 </head>
 <body>
-    <script src = "js/jquery.js"></script>
-    <script src = "js/jquery-test.js"></script>
+    <div class="container">
+        <h1 id="firstTitle">
+            Lorem ipsum dolor sit amet.
+        </h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ducimus, enim harum ipsum iure nulla quis ratione rerum similique ut? Aliquid doloremque doloribus eligendi fugiat impedit libero officiis praesentium totam? Alias animi architecto asperiores aspernatur aut beatae corporis cupiditate ea earum, esse et exercitationem expedita facere facilis fugiat impedit incidunt ipsum iusto minus mollitia neque obcaecati perspiciatis placeat quae quibusdam quos reiciendis reprehenderit saepe sapiente sit sunt suscipit velit vero. Asperiores corporis eum exercitationem itaque labore nam natus nobis quidem reprehenderit vero! Aliquid beatae in iure odit temporibus! Aliquam architecto deleniti dolorum enim eos inventore labore maxime odio officiis, voluptate?
+        </p>
+        <h1 id="secondTitle">
+            Lorem ipsum dolor sit amet, consectetur adipisicing.
+        </h1>
+        <div class="listOne">
+            <ul>
+                <li> Lorem ipsum dolor.</li>
+                <li id="itemTwo"> Lorem ipsum.</li>
+                <li> Lorem.</li>
+                <li> Lorem ipsum dolor sit.</li>
+            </ul>
+        </div>
+        <p id="bottomText">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, iure.
+        </p>
+
+        <div class="secondList">
+            <ul id="listJumble">
+                <li> Lorem dolor.</li>
+                <li id="itemTwo"> ipsum.</li>
+                <li> Lorem.</li>
+                <li> dolor sit.</li>
+            </ul>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="js/jquery.js"></script>
+    </div>
 </body>
+
 </html>
