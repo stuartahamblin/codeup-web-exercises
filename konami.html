@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    var userKeystrokes = [];
+    var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "KeyB", "KeyA", "Enter"];
+    var originalEvent;
+
+    $(document).keyup(function(event){
+        userKeystrokes.push(event.originalEvent.code);
+        // console.log(userKeystrokes);
+
+        for (var i = 0; i < userKeystrokes.length; i++) {
+            if (userKeystrokes[i] !== konami[i]) {
+                console.log("boo");
+                userKeystrokes = [];
+                break;
+            } else if (userKeystrokes.length === 11) {
+                console.log("Complete Sequence");
+                alert("Thank you for entering the Konami code!");
+                $("h1").css("background-color", "blue");
+                break;
+            } else if (userKeystrokes[i] === konami[i]) {
+                console.log("Konami Code!!");
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
