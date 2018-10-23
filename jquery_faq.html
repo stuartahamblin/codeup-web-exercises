@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery faq</title>
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--Exercises-->
+<!--Create a new file named jquery_faq.html. Commit all changes to GitHub.-->
+
+<!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
+<h1>National Park FAQs</h1>
+<button class="answer-btn">Toggle Answers</button>
+<dl>
+    <dt>Where can I find a park map?</dt>
+    <dd class="invisible">You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
+
+    <dt>How do I make reservations for camping/lodging in national parks?</dt>
+    <dd class="invisible">For campground reservations, visit Recreation.gov. Not all parks participate in this service; many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check specific park websites. You can also learn more about camping in national parks and find a map of parks with camping opportunities.</dd>
+
+    <dt>How do I reserve a tour in a park?</dt>
+    <dd class="invisible">You can book some park tours through Recreation.gov such as WWII Valor in the Pacific (Pearl Harbor), many Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks participate in this reservation service. For more information on tours offered at a specific park, please see the park search.</dd>
+
+    <dt>Can I bring my pet to a national park?</dt>
+    <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
+
+    <dt>Can I bring my service dog to a national park?</dt>
+    <dd class="invisible">Yes, service dogs are legally permitted anywhere in a park that visitors can go. Learn more about service animals in national parks, including the difference between service animals and emotional support animals.</dd>
+
+    <dt>What do I need to know about driving off road in national parks?</dt>
+    <dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
+
+    <dt>How do I apply for a job with the National Park Service?</dt>
+    <dd class="invisible">National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs. Learn more about working for us, including opportunities for students and volunteers and tips for applying for jobs.</dd>
+
+    <dt>What are concessions?</dt>
+    <dd class="invisible">Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 480 NPS concession contracts in more than 100 different park units vary in size from small, family-owned businesses to national/international corporations. Learn more about commercial services in the National Park Service.</dd>
+
+    <dt>How do I find out about contracting opportunities?</dt>
+    <dd class="invisible">Opportunities to contract with the National Park Service are posted to FedBizOpps.gov, the federal government’s electronic business portal.</dd>
+
+    <dt>Where do I find out about grant and cooperative agreement programs and opportunities?</dt>
+    <dd class="invisible">To find out how to register, search for opportunities, and apply for financial assistance visit Grants.gov.</dd>
+</dl>
+
+<!--Add a class to all dd elements named invisible.-->
+
+<!--Create CSS that sets elements with the invisible class to display: none.-->
+
+<!--Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.-->
+<!--TODO-->
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+    $(document).ready(function() {
+        $('.answer-btn').click(function() {
+            $('dd').toggleClass('invisible');
+        });
+    });
+
+<!--Bonus-->
+
+<!--When any one dt is clicked, the element that was clicked should be highlighted.-->
+
+    $('dt').click(function(){
+        $(this).css('background', 'yellow');
+    })
+</script>
+
+</body>
+</html>
