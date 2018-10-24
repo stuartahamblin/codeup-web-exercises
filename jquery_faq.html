@@ -7,6 +7,16 @@
         .invisible {
             display: none;
         }
+        .pictureRight {
+            float: left;
+        }
+        .pictureCenter {
+            float: left;
+        }
+        .pictureLeft {
+            float: left;
+        }
+        /*<img src="img/whale3.jpeg">*/
     </style>
 </head>
 <body>
@@ -15,7 +25,7 @@
 <!--Create a new file named jquery_faq.html. Commit all changes to GitHub.-->
 
 <!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
-<h1>National Park FAQs</h1>
+<h2>National Park FAQs</h2>
 <button class="answer-btn">Toggle Answers</button>
 <dl>
     <dt>Where can I find a park map?</dt>
@@ -47,14 +57,46 @@
 
     <dt>Where do I find out about grant and cooperative agreement programs and opportunities?</dt>
     <dd class="invisible">To find out how to register, search for opportunities, and apply for financial assistance visit Grants.gov.</dd>
+
 </dl>
 
-<!--Add a class to all dd elements named invisible.-->
+<h2>National Park Facts</h2>
+<button class="highlight-btn">Turn Yellow</button>
+<h3>Big Bend</h3>
+<ul id="state-park-facts">
+    <li>Residing in Texas</li>
+    <li>Near Alpine</li>
+    <li>Desert</li>
+    <li>Lots Visit</li>
+</ul>
+<h3>Enchanted Rock</h3>
+<ul id="state-park-facts">
+    <li>Residing in Texas</li>
+    <li>Near Fredricksburg</li>
+    <li>Big Rock</li>
+    <li>Lots Visit</li>
+</ul>
+<h3>Grand Canyon</h3>
+<ul id="state-park-facts">
+    <li>Residing in Arizona</li>
+    <li>Near Flagstaff</li>
+    <li>Forest and Desert</li>
+    <li>90% of visitors do not go more than 30 feet in</li>
+</ul>
 
-<!--Create CSS that sets elements with the invisible class to display: none.-->
+<h2>Pictures</h2>
+<div class="pictureLeft">
+</div>
+<div class="pictureCenter">
+</div>
+<div class="pictureRight">
 
-<!--Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.-->
-<!--TODO-->
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Abel|Anton" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
@@ -62,16 +104,42 @@
         $('.answer-btn').click(function() {
             $('dd').toggleClass('invisible');
         });
+        $('dt').click(function() {
+            $(this).css('background', 'yellow');
+        });
+
+        $('.highlight-btn').click(function() {
+            $('ul').each(function() {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
+
+        $('h3').click(function() {
+            $(this).next().css('font-weight','bold');
+        })
+
+        $('ul').click(function() {
+            $(this).children().first().css('color','blue');
+        })
     });
 
-<!--Bonus-->
-
-<!--When any one dt is clicked, the element that was clicked should be highlighted.-->
-
-    $('dt').click(function(){
-        $(this).css('background', 'yellow');
-    })
 </script>
 
 </body>
 </html>
+
+<!--Create a button that, when clicked, makes the last li in each ul have a yellow background.-->
+
+<!--When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.-->
+
+<!--When any list item is clicked, first li of the parent ul should have a font color of blue.-->
+
+<!--Bonus-->
+<!--Create 3 divs that each look like a picture Frame; each one should have a unique background image and a button
+underneath that swaps the image from the frame. Use Traversing functions of jQuery to accomplish this.-->
+
+<!--The rules are the following:-->
+
+<!--The left frame swaps to the right and takes the image from the frame in the center.-->
+<!--The center frame swaps randomly to either the left or right.-->
+<!--The right frame swaps to the left and takes the image from the frame in the center.-->
