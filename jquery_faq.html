@@ -9,130 +9,163 @@
         }
         .pictureRight {
             float: left;
+            background-image: url("img/whale1.jpeg");
+            width: 250px;
+            height: 180px;
         }
         .pictureCenter {
             float: left;
+            background-image: url("img/whale2.jpeg");
+            width: 250px;
+            height: 180px;
         }
         .pictureLeft {
             float: left;
+            background-image: url("img/whale3.jpeg");
+            width: 250px;
+            height: 180px;
+        }
+        .buttonDivision{
+            clear: both;
         }
         /*<img src="img/whale3.jpeg">*/
     </style>
 </head>
-<body>
+    <body>
 
-<!--Exercises-->
-<!--Create a new file named jquery_faq.html. Commit all changes to GitHub.-->
+    <div>
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span>X</span>
+        <h2>Register for the site</h2>
+    </div>
+        <h2>National Park FAQs</h2>
+        <button class="answer-btn">Toggle Answers</button>
+        <dl>
+            <dt>Where can I find a park map?</dt>
+            <dd class="invisible">You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
 
-<!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
-<h2>National Park FAQs</h2>
-<button class="answer-btn">Toggle Answers</button>
-<dl>
-    <dt>Where can I find a park map?</dt>
-    <dd class="invisible">You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
+            <dt>How do I make reservations for camping/lodging in national parks?</dt>
+            <dd class="invisible">For campground reservations, visit Recreation.gov. Not all parks participate in this service; many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check specific park websites. You can also learn more about camping in national parks and find a map of parks with camping opportunities.</dd>
 
-    <dt>How do I make reservations for camping/lodging in national parks?</dt>
-    <dd class="invisible">For campground reservations, visit Recreation.gov. Not all parks participate in this service; many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check specific park websites. You can also learn more about camping in national parks and find a map of parks with camping opportunities.</dd>
+            <dt>How do I reserve a tour in a park?</dt>
+            <dd class="invisible">You can book some park tours through Recreation.gov such as WWII Valor in the Pacific (Pearl Harbor), many Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks participate in this reservation service. For more information on tours offered at a specific park, please see the park search.</dd>
 
-    <dt>How do I reserve a tour in a park?</dt>
-    <dd class="invisible">You can book some park tours through Recreation.gov such as WWII Valor in the Pacific (Pearl Harbor), many Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks participate in this reservation service. For more information on tours offered at a specific park, please see the park search.</dd>
+            <dt>Can I bring my pet to a national park?</dt>
+            <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
 
-    <dt>Can I bring my pet to a national park?</dt>
-    <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
+            <dt>Can I bring my service dog to a national park?</dt>
+            <dd class="invisible">Yes, service dogs are legally permitted anywhere in a park that visitors can go. Learn more about service animals in national parks, including the difference between service animals and emotional support animals.</dd>
 
-    <dt>Can I bring my service dog to a national park?</dt>
-    <dd class="invisible">Yes, service dogs are legally permitted anywhere in a park that visitors can go. Learn more about service animals in national parks, including the difference between service animals and emotional support animals.</dd>
+            <dt>What do I need to know about driving off road in national parks?</dt>
+            <dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
 
-    <dt>What do I need to know about driving off road in national parks?</dt>
-    <dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
+            <dt>How do I apply for a job with the National Park Service?</dt>
+            <dd class="invisible">National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs. Learn more about working for us, including opportunities for students and volunteers and tips for applying for jobs.</dd>
 
-    <dt>How do I apply for a job with the National Park Service?</dt>
-    <dd class="invisible">National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs. Learn more about working for us, including opportunities for students and volunteers and tips for applying for jobs.</dd>
+            <dt>What are concessions?</dt>
+            <dd class="invisible">Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 480 NPS concession contracts in more than 100 different park units vary in size from small, family-owned businesses to national/international corporations. Learn more about commercial services in the National Park Service.</dd>
 
-    <dt>What are concessions?</dt>
-    <dd class="invisible">Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 480 NPS concession contracts in more than 100 different park units vary in size from small, family-owned businesses to national/international corporations. Learn more about commercial services in the National Park Service.</dd>
+            <dt>How do I find out about contracting opportunities?</dt>
+            <dd class="invisible">Opportunities to contract with the National Park Service are posted to FedBizOpps.gov, the federal government’s electronic business portal.</dd>
 
-    <dt>How do I find out about contracting opportunities?</dt>
-    <dd class="invisible">Opportunities to contract with the National Park Service are posted to FedBizOpps.gov, the federal government’s electronic business portal.</dd>
+            <dt>Where do I find out about grant and cooperative agreement programs and opportunities?</dt>
+            <dd class="invisible">To find out how to register, search for opportunities, and apply for financial assistance visit Grants.gov.</dd>
 
-    <dt>Where do I find out about grant and cooperative agreement programs and opportunities?</dt>
-    <dd class="invisible">To find out how to register, search for opportunities, and apply for financial assistance visit Grants.gov.</dd>
+        </dl>
 
-</dl>
+        <h2>National Park Facts</h2>
+        <button class="highlight-btn">Turn Yellow</button>
+        <h3>Big Bend</h3>
+        <ul id="state-park-facts">
+            <li>Residing in Texas</li>
+            <li>Near Alpine</li>
+            <li>Desert</li>
+            <li>Lots Visit</li>
+        </ul>
+        <h3>Enchanted Rock</h3>
+        <ul id="state-park-facts">
+            <li>Residing in Texas</li>
+            <li>Near Fredricksburg</li>
+            <li>Big Rock</li>
+            <li>Lots Visit</li>
+        </ul>
+        <h3>Grand Canyon</h3>
+        <ul id="state-park-facts">
+            <li>Residing in Arizona</li>
+            <li>Near Flagstaff</li>
+            <li>Forest and Desert</li>
+            <li>90% of visitors do not go more than 30 feet in</li>
+        </ul>
 
-<h2>National Park Facts</h2>
-<button class="highlight-btn">Turn Yellow</button>
-<h3>Big Bend</h3>
-<ul id="state-park-facts">
-    <li>Residing in Texas</li>
-    <li>Near Alpine</li>
-    <li>Desert</li>
-    <li>Lots Visit</li>
-</ul>
-<h3>Enchanted Rock</h3>
-<ul id="state-park-facts">
-    <li>Residing in Texas</li>
-    <li>Near Fredricksburg</li>
-    <li>Big Rock</li>
-    <li>Lots Visit</li>
-</ul>
-<h3>Grand Canyon</h3>
-<ul id="state-park-facts">
-    <li>Residing in Arizona</li>
-    <li>Near Flagstaff</li>
-    <li>Forest and Desert</li>
-    <li>90% of visitors do not go more than 30 feet in</li>
-</ul>
+        <h2>Pictures</h2>
+        <div class="pictureLeft">
+        </div>
+        <div class="pictureCenter">
+        </div>
+        <div class="pictureRight">
+        </div>
+        <div class="buttonDivision">
+            <button>Left</button>
+            <button>Center</button>
+            <button>Right</button>
+        </div>
 
-<h2>Pictures</h2>
-<div class="pictureLeft">
-</div>
-<div class="pictureCenter">
-</div>
-<div class="pictureRight">
+        <script src="js/jquery-2.2.4.js"></script>
+        <script>
+            "use strict";
+            $(document).ready(function() {
+                $('.answer-btn').click(function() {
+                    $('dd').toggleClass('invisible');
+                });
+                $('dt').click(function() {
+                    $(this).css('background', 'yellow');
+                });
 
-</div>
+                $('.highlight-btn').click(function() {
+                    $('ul').each(function() {
+                        $(this).children().last().css('background-color', 'yellow');
+                    });
+                });
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Abel|Anton" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+                $('h3').click(function() {
+                    $(this).next().css('font-weight','bold');
+                });
 
-<script src="js/jquery-2.2.4.js"></script>
-<script>
-    "use strict";
-    $(document).ready(function() {
-        $('.answer-btn').click(function() {
-            $('dd').toggleClass('invisible');
-        });
-        $('dt').click(function() {
-            $(this).css('background', 'yellow');
-        });
+                $('ul').click(function() {
+                    $(this).children().first().css('color','blue');
+                });
+                $('span').click(function() {
+                    $('div').first().hide();
+                });
 
-        $('.highlight-btn').click(function() {
-            $('ul').each(function() {
-                $(this).children().last().css('background-color', 'yellow');
+                $('h3').next().hide();
+
+                $('h3').click(function() {
+                    $(this).next().slideToggle();
+                });
+                $('h2').first().hide();
+
+                setTimeout(function () {
+                    $('h2').first().fadeIn(1000);
+                }, 8000);
+
             });
-        });
 
-        $('h3').click(function() {
-            $(this).next().css('font-weight','bold');
-        })
-
-        $('ul').click(function() {
-            $(this).children().first().css('color','blue');
-        })
-    });
-
-</script>
-
-</body>
+        </script>
+    </body>
 </html>
 
-<!--Create a button that, when clicked, makes the last li in each ul have a yellow background.-->
+<!--As always, make sure you are adding, commiting and pushing to Github.-->
 
-<!--When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.-->
+<!--Bonus-->
 
-<!--When any list item is clicked, first li of the parent ul should have a font color of blue.-->
+<!--Use a bootstrap alert for the dismissable message that shows on page load.-->
+
+<!--Use a bootstrap modal for the message that fades in after 8 seconds. You may find that you can use bootstrap's modal methods to achieve the fading effect.-->
+
+
+
+<!--TODO-->
 
 <!--Bonus-->
 <!--Create 3 divs that each look like a picture Frame; each one should have a unique background image and a button
