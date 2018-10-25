@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container">
 
+        <h1>My Tool Store</h1>
+
+        <table id="products">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Categories</th>
+            </tr>
+            </thead>
+            <tbody id="insertProducts"></tbody>
+        </table>
+            <div class="tableLocation">
+            </div>
+            <button>Refresh</button>
+    </div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+<script>
+    (function() {
+        "use strict";
+        // TODO: Create an ajax GET request for /data/inventory.json
+        $('button').click(function(){
+            $.ajax("data/inventory.json").done(function (data) {
+                $('#insertProducts').html(buildHTML(data));
+            });
+        });
+        // TODO: Take the data from inventory.json and append it to the products table
+
+        function buildHTML(inputObjects) {
+            var outputHTML = '<table>';
+            inputObjects.forEach(function(inputObject) {
+                outputHTML += '<tr>';
+                outputHTML += '<td>' + inputObject.title + '</td>';
+                outputHTML += '<td>' + inputObject.quantity + '</td>';
+                outputHTML += '<td>' + inputObject.price + '</td>';
+                outputHTML += '<td>' + inputObject.categories + '</td>';
+                outputHTML += '</tr>';
+            });
+            outputHTML += '</table>';
+            return outputHTML;
+        };
+
+        $.ajax("data/inventory.json").done(function (data) {
+            $('#insertProducts').html(buildHTML(data));
+        });
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+    })();
+</script>
+
 </html>
