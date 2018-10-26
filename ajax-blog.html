@@ -2,18 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
-
+    <div class="container">
+        <div id="posts">
+        </div>
+        <button id="updateBlog">Update Blog</button>
+    </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    var sampleAjax = [
+        {
+        "title": "The Second Post",
+        "content": "Cupcake ipsum dolor sit amet gummies. Cake chocolate sweet ice cream oat cake biscuit bear claw dessert. Jujubes marzipan toffee apple pie pastry dragée jujubes marshmallow. Dragée chocolate gingerbread liquorice chocolate bar jujubes. Sweet chocolate bar jelly-o chocolate cake candy carrot cake cotton candy macaroon marzipan. Sweet roll biscuit sweet gummies topping sesame snaps tootsie roll sugar plum pie. Sweet muffin croissant chocolate cake chupa chups. Donut croissant gummies donut powder ice cream. Chupa chups halvah apple pie topping jelly beans donut candy canes donut. Bonbon cake gummi bears cheesecake tart topping powder liquorice gummi bears.",
+        "categories": [
+            "family",
+            "candy",
+            "sweets",
+            "sugar"
+        ],
+        "date": "February 14, 2015"
+    }
+    ];
+
+    $('#updateBlog').click(function(){
+        $.ajax("data/blog.json").done(function (data) {
+            $('#posts').html(buildBlogHTML(data))
+        });
+    });
+
+    function buildBlogHTML(inputObjects) {
+        var outputHTML = "<hr>";
+        inputObjects.forEach(function(inputObject) {
+            outputHTML += "<div>";
+            outputHTML += "<h2>"+inputObject.title+"</h2>";
+            outputHTML += "<h3>"+inputObject.date+"</h3>";
+            outputHTML += "<p>"+inputObject.content+"</p>";
+            outputHTML += "<p>"+"<strong>Categories:</strong> "+ inputObject.categories.join(', ') + "</p>";
+            outputHTML += "</div>";
+            outputHTML += "<hr>";
+        });
+        return outputHTML
+    }
+
+    $.ajax("data/blog.json").done(function (data) {
+        $('#posts').html(buildBlogHTML(data))
+    });
+
+</script>
+
+<!--{-->
+<!--"title": "My First Blog Post",-->
+<!--"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",-->
+<!--"categories": [-->
+<!--"greek"-->
+<!--],-->
+<!--"date": "January 25, 2015"-->
+<!--}-->
+
 </html>
 
  <!--TODO-->
-<!--Ajax Blog-->
-<!--Create a new html file called ajax-blog.html.-->
-<!--At minimum, your ajax blog will need an empty <div> with an id of posts.-->
-    <!--Add your own Bootstrap theme to this file as well. Feel free to use the same one as your store or choose a different one.-->
-    <!--Download blog.json to your data directory from before.-->
-    <!--Use ajax to load the contents of blog.json and add the data from it to your #posts div.-->
-    <!--Add additional entries to blog.json and make sure your changes are reflected on the page.-->
+<!--Download blog.json to your data directory from before.-->
+<!--Use ajax to load the contents of blog.json and add the data from it to your #posts div.-->
+<!--Add additional entries to blog.json and make sure your changes are reflected on the page.-->
