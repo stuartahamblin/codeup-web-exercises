@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>Weather Map Project</title>
+
+</head>
+<body>
+<div class="container">
+<main class="container text-center">
+
+    <h1>Weather Map Project Lecture</h1>
+
+</main>
+    <div class="row">
+        <div class="col-4 text-center first-day">
+
+        </div>
+        <div class="col-4 text-center second-day">
+            <h2>high/low</h2>
+            <h3>Image</h3>
+            <p><strong>Clouds:</strong>Overcast Clouds</p>
+            <p><strong>Humidity:</strong>52</p>
+            <p><strong>Wind:</strong>6</p>
+            <p><strong>Pressure:</strong>1025.93</p>
+        </div>
+        <div class="col-4 text-center third-day">
+            <h2>high/low</h2>
+            <h3>Image</h3>
+            <p><strong>Clouds:</strong>Overcast Clouds</p>
+            <p><strong>Humidity:</strong>52</p>
+            <p><strong>Wind:</strong>6</p>
+            <p><strong>Pressure:</strong>1025.93</p>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery Version 2.2.4 -->
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+
+        /**
+         * author Justin Reich
+         * getMinMaxDayTemp returns the minimum and maximum temp for a given day based on the response of a query to the OpenWeatherMap 5-Day Hourly Forecast API
+         * @param data - the response object from the OpenWeatherMap 5-Day Hourly Forecast API
+         * @param day - a number (1-5) representing which day in the next five days to get the min and max temp for;l
+         * @returns {{min: T, max: T}}
+         */
+        const getMinMaxDayTemp = (data, day) => {
+            const temps = data.list.slice(day * 8 - 8, day * 8)
+                .reduce((prev, curr) => {
+                    prev.push(curr.main.temp);
+                    return prev;
+                }, []).sort();
+            return {min: temps.shift(), max: temps.pop()};
+        };
+
+        function buildEachDayHTML(inputObject) {
+            var outputHTML = "<h4>"+getMinMaxDayTemp(inputObject, 1).max+" &#x2109 / "+getMinMaxDayTemp(inputObject, 1).min+" &#x2109</h4>";
+            outputHTML += "<h5>Image Placeholder</h5>";
+            // <p><strong>Clouds:</strong>Overcast Clouds</p>
+            // <p><strong>Humidity:</strong>52</p>
+            // <p><strong>Wind:</strong>6</p>
+            // <p><strong>Pressure:</strong>1025.93</p>
+            return outputHTML;
+        }
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "7f8e3aa0aad113510e0c1eaafd1c17b8",
+            id: 4726206,
+            units: "imperial"
+        }).done(function(data) {
+            $('.first-day').html(buildEachDayHTML(data));
+            $('.second-day').html(buildEachDayHTML(data));
+            $('.third-day').html(buildEachDayHTML(data));
+            // console.log(getMinMaxDayTemp(data, 1));
+            // console.log(data.list);
+            for (var i=0; i<data.list.length; i+=1) {
+                console.log(data.list[i].weather[0].main);
+            }
+        });
+
+    });
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+<!--write html and css to make/style a three-day forecast set of divs (may use design from curriculum)-->
+<!--create a function to append specific parts of the OpenWeatherMap map object to the DOM and call it in the .done()
+    of the OpenWeatherMap map GET request.-->
+<!--remember to first console.log specific data from the OpenWeatherMap object, then work on adding to the DOM-->
+<!--read and reread the curriculum and OpenWeatherMap docs carefully on how to get an image of the weather forecast-->
+<!--hint: "http://openweathermap.org/img/w/" + whateverTheWeatherIconValueIs-->
+<!--verify that the OpenWeatherMap data populates by hard coding in lat and lon values-->
+<!--create lat and lon variables to hold lat and lon values.-->
+<!--add lat and lon properties to the function that calls the OpenWeatheMap API GET request-->
+<!--add an input field for lat and lon with button that fires a new request to the OpenWeatherMap API and passes the lat and lon values from the input fields into the request.-->
+<!--CREATE THE MAP-->
+<!--using syntax from the previous Maps exercise, add a map below the OpenWeatherMap forecast-->
+<!--add a marker to the map and make it draggable-->
+<!--create a marker drag event that console logs the lat and lon where the marker is dropped-->
+<!--WIRE UP MAP TO WEATHER API-->
+<!--add the function call that makes the Weather API request to the marker drag event and pass in the lat and lon values of the marker to the Weather API request function-->
