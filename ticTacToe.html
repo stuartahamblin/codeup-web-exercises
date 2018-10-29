@@ -106,12 +106,12 @@
                 recording [2] = outputHTML;
                 recording [3] = turnOrWin;
             }
-            if (recording[0] === 9) {                                                                    // displays draw
+            if (recording [0] === 9 && recording[4] !== 1) {                                                                    // displays draw
                 recording [3] = "<h2>" + "draw" + "</h2>";
-                recording[4] = 1;
+                recording [4] = 1;
             }
         }
-        return console.log(recording);
+        return recording;
     }
     $('.insideText').click(function() {
         modString(this.id, recordingArr); //pass into function(idName) returns modified recordingArr
