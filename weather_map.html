@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <title>Weather Map Project</title>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
 
 </head>
 <body>
@@ -21,23 +27,44 @@
 
         </div>
         <div class="col-4 text-center second-day">
-            <h2>high/low</h2>
-            <h3>Image</h3>
-            <p><strong>Clouds:</strong>Overcast Clouds</p>
-            <p><strong>Humidity:</strong>52</p>
-            <p><strong>Wind:</strong>6</p>
-            <p><strong>Pressure:</strong>1025.93</p>
         </div>
         <div class="col-4 text-center third-day">
-            <h2>high/low</h2>
-            <h3>Image</h3>
-            <p><strong>Clouds:</strong>Overcast Clouds</p>
-            <p><strong>Humidity:</strong>52</p>
-            <p><strong>Wind:</strong>6</p>
-            <p><strong>Pressure:</strong>1025.93</p>
         </div>
     </div>
 </div>
+<div id="map-canvas"></div>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_GOES_HERE"></script>-->
+
+<script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            // zoom: 5,
+            // zoom: 15,
+            zoom: 20,
+
+            // This sets the center of the map at our location
+            center: {
+                lat:  32.2231891,
+                lng: -110.9693147
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        // Create lat and long for our marker position
+        var pocaCosa = {
+            lat: 32.2231,
+            lng: -110.9693147
+        };
+
+        infowindow.open(map, marker);
+
+    })();
+</script>
 
 <!-- jQuery Version 2.2.4 -->
 <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -66,7 +93,7 @@
             return {min: temps.shift(), max: temps.pop()};
         };
 
-        function findDayTwoStart (data, day) {                                                                  //day 0 is today, day 1 is tomorrow, day 2 is next
+        function findDayTwoStart (data, day) {                                                                  //day 0 is today, day 1 is tomorrow, day 2 is next. for day 0 returns [0, day 2 start]. for day 1 returns [day 2 start, day 3 start] etc...
             var dateOne = data.list[0].dt_txt.substring(0, 10);
             var dayOneStart = 0;
             while(data.list[dayOneStart].dt_txt.substring(0, 10) === dateOne) {
@@ -162,8 +189,8 @@
             $('.third-day').html(buildEachDayHTML(data, 2));
         });
     });
-
 </script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
