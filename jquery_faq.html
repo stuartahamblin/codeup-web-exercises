@@ -7,7 +7,7 @@
         .invisible {
             display: none;
         }
-        .pictureRight {
+        .pictureLeft {
             float: left;
             background-image: url("img/whale1.jpeg");
             width: 250px;
@@ -19,7 +19,7 @@
             width: 250px;
             height: 180px;
         }
-        .pictureLeft {
+        .pictureRight {
             float: left;
             background-image: url("img/whale3.jpeg");
             width: 250px;
@@ -32,45 +32,48 @@
     </style>
 </head>
     <body>
-
-    <div>
-        <h1>Would you like to sign up for our newsletter?</h1>
-        <span>X</span>
+        <div>
+            <h1>Would you like to sign up for our newsletter? <span>X</span></h1>
+        </div>
         <h2>Register for the site</h2>
-    </div>
+        <div class="pictureSwitch">
+            <h2>Pictures</h2>
+            <div class="pictureLeft">
+                <h1>hide me!</h1>
+            </div>
+            <div class="pictureCenter">
+            </div>
+            <div class="pictureRight">
+            </div>
+            <div class="buttonDivision">
+                <button class="btnLeft">Left</button>
+                <button class="btnCenter">Center</button>
+                <button class="btnRight">Right</button>
+            </div>
+        </div>
         <h2>National Park FAQs</h2>
         <button class="answer-btn">Toggle Answers</button>
         <dl>
             <dt>Where can I find a park map?</dt>
             <dd class="invisible">You can view maps on specific park websites or download maps from the Harpers Ferry Center map collection.</dd>
-
             <dt>How do I make reservations for camping/lodging in national parks?</dt>
             <dd class="invisible">For campground reservations, visit Recreation.gov. Not all parks participate in this service; many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check specific park websites. You can also learn more about camping in national parks and find a map of parks with camping opportunities.</dd>
-
             <dt>How do I reserve a tour in a park?</dt>
             <dd class="invisible">You can book some park tours through Recreation.gov such as WWII Valor in the Pacific (Pearl Harbor), many Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks participate in this reservation service. For more information on tours offered at a specific park, please see the park search.</dd>
-
             <dt>Can I bring my pet to a national park?</dt>
             <dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
-
             <dt>Can I bring my service dog to a national park?</dt>
             <dd class="invisible">Yes, service dogs are legally permitted anywhere in a park that visitors can go. Learn more about service animals in national parks, including the difference between service animals and emotional support animals.</dd>
-
             <dt>What do I need to know about driving off road in national parks?</dt>
             <dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
-
             <dt>How do I apply for a job with the National Park Service?</dt>
             <dd class="invisible">National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs. Learn more about working for us, including opportunities for students and volunteers and tips for applying for jobs.</dd>
-
             <dt>What are concessions?</dt>
             <dd class="invisible">Concessionaires provide park visitors with lodging, transportation, food services, shops, and other services. More than 480 NPS concession contracts in more than 100 different park units vary in size from small, family-owned businesses to national/international corporations. Learn more about commercial services in the National Park Service.</dd>
-
             <dt>How do I find out about contracting opportunities?</dt>
             <dd class="invisible">Opportunities to contract with the National Park Service are posted to FedBizOpps.gov, the federal government’s electronic business portal.</dd>
-
             <dt>Where do I find out about grant and cooperative agreement programs and opportunities?</dt>
             <dd class="invisible">To find out how to register, search for opportunities, and apply for financial assistance visit Grants.gov.</dd>
-
         </dl>
 
         <h2>National Park Facts</h2>
@@ -97,18 +100,6 @@
             <li>90% of visitors do not go more than 30 feet in</li>
         </ul>
 
-        <h2>Pictures</h2>
-        <div class="pictureLeft">
-        </div>
-        <div class="pictureCenter">
-        </div>
-        <div class="pictureRight">
-        </div>
-        <div class="buttonDivision">
-            <button>Left</button>
-            <button>Center</button>
-            <button>Right</button>
-        </div>
 
         <script src="js/jquery-2.2.4.js"></script>
         <script>
@@ -134,6 +125,25 @@
                 $('ul').click(function() {
                     $(this).children().first().css('color','blue');
                 });
+
+                // <!--TODO-->
+                //
+                // <!--Bonus-->
+                // <!--Create 3 divs that each look like a picture Frame; each one should have a unique background image and a button
+                // underneath that swaps the image from the frame. Use Traversing functions of jQuery to accomplish this.-->
+                //
+                // <!--The rules are the following:-->
+                //
+                // <!--The left frame swaps to the right and takes the image from the frame in the center.-->
+                // $('button').first()
+                $('.pictureSwitch').children().css('color','blue')
+
+                // <!--The center frame swaps randomly to either the left or right.-->
+                // <!--The right frame swaps to the left and takes the image from the frame in the center.-->
+                // addClass()
+                //     .removeClass()
+
+
                 $('span').click(function() {
                     $('div').first().hide();
                 });
@@ -149,30 +159,16 @@
                     $('h2').first().fadeIn(1000);
                 }, 8000);
 
+                // <!--TODO-->
+                //
+                // <!--Use a bootstrap alert for the dismissable message that shows on page load.-->
+                //
+                // <!--Use a bootstrap modal for the message that fades in after 8 seconds. You may find that you can use bootstrap's
+                // modal methods to achieve the fading effect.-->
             });
-
         </script>
     </body>
 </html>
 
-<!--As always, make sure you are adding, commiting and pushing to Github.-->
-
-<!--Bonus-->
-
-<!--Use a bootstrap alert for the dismissable message that shows on page load.-->
-
-<!--Use a bootstrap modal for the message that fades in after 8 seconds. You may find that you can use bootstrap's modal methods to achieve the fading effect.-->
 
 
-
-<!--TODO-->
-
-<!--Bonus-->
-<!--Create 3 divs that each look like a picture Frame; each one should have a unique background image and a button
-underneath that swaps the image from the frame. Use Traversing functions of jQuery to accomplish this.-->
-
-<!--The rules are the following:-->
-
-<!--The left frame swaps to the right and takes the image from the frame in the center.-->
-<!--The center frame swaps randomly to either the left or right.-->
-<!--The right frame swaps to the left and takes the image from the frame in the center.-->
