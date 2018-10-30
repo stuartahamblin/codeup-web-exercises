@@ -56,6 +56,7 @@
          * @param day - a number (1-5) representing which day in the next five days to get the min and max temp for;l
          * @returns {{min: T, max: T}}
          */
+
         const getMinMaxDayTemp = (data, day) => {
             const temps = data.list.slice(day * 8 - 8, day * 8)
                 .reduce((prev, curr) => {
@@ -65,66 +66,89 @@
             return {min: temps.shift(), max: temps.pop()};
         };
 
-        function findDayTwoStart (data) {
-            var datetwo = data.list[0].dt_txt.substring(0, 10);
-            var dayTwoStart = 0;
-            while(data.list[dayTwoStart].dt_txt.substring(0, 10) === datetwo) {
-                dayTwoStart += 1;
+        function findDayTwoStart (data, day) {                                                                  //day 0 is today, day 1 is tomorrow, day 2 is next
+            var dateOne = data.list[0].dt_txt.substring(0, 10);
+            var dayOneStart = 0;
+            while(data.list[dayOneStart].dt_txt.substring(0, 10) === dateOne) {
+                dayOneStart += 1;
+            } if (day === 0) {
+                return [0, dayOneStart];
+            } else {
+                return [(dayOneStart+(8*(day-1))), (dayOneStart+(8*day))];
             }
-            return dayTwoStart;
-            // var i = 0; i <= findDayTwoStart(data); i += 1
-            // var i = findDayTwoStart(data); i < findDayTwoStart(data)+8; i+=1
-            // var i = findDayTwoStart(data)+8; i < findDayTwoStart(data)+16; i+=1
         }
 
-
-        function cloudSummary(data, day) {                                                                  // day 1 is today, day 2 is tomorrow etc
+        function cloudSummary(data, day) {                                                                  // day 0 is today, day 1 is tomorrow etc
             var outputData = [];
-            var typeSkyCount = [0, 0, 0];                                                                   // [clearCount, cloudsCount, rainCount]
-            console.log(findDayTwoStart(data));
-            if (day === 1) {
-                for (var i = 0; i <= findDayTwoStart(data); i += 1) {                                         // records type per object
-                    outputData.push(data.list[i].weather[0].main);
-                }
+            var typeSkyCount = [0, 0, 0, 0];                                                                   // [clearCount, cloudsCount, rainCount]
+            var logStartStop = findDayTwoStart (data, day);
+            for (var i = logStartStop[0]; i < logStartStop[1]; i += 1) {
+                outputData.push(data.list[i].weather[0].description);
+            }
+            // console.log(outputData);
                 for (var j = 0; j < outputData.length; j += 1) {                                            // counts number of object types
-                    if (outputData[j] === "Clear") {
+                    if (outputData[j] === "clear sky") {
                         typeSkyCount[0] += 1;
-                    } else if (outputData[j] === "Clouds") {
+                    } else if (outputData[j] === "few clouds") {
                         typeSkyCount[1] += 1;
-                    } else if (outputData[j] === "Rain") {
+                    } else if (outputData[j] === "broken clouds") {
                         typeSkyCount[2] += 1;
+                    } else if (outputData[j] === "light rain") {
+                        typeSkyCount[3] += 1;
                     }
                 }
+                // console.log(typeSkyCount);
                 if (typeSkyCount[0] > typeSkyCount[1] && typeSkyCount[0] > typeSkyCount[2]) {               // picks most prevalent
-                    return "Clear";
-                } else if (typeSkyCount[1] > typeSkyCount[0] && typeSkyCount[1] > typeSkyCount[2]) {
-                    return "Clouds";
-                } else if (typeSkyCount[2] > typeSkyCount[0] && typeSkyCount[2] > typeSkyCount[1]) {
-                    return "Rain";
+                    return "<strong>Clouds:</strong> Clear Sky";
+                } else if (typeSkyCount[1] > typeSkyCount[0] && typeSkyCount[1] > typeSkyCount[3] && typeSkyCount[1] > typeSkyCount[2]) {
+                    return "<strong>Clouds:</strong> Few Clouds";
+                } else if (typeSkyCount[2] > typeSkyCount[1] && typeSkyCount[2] > typeSkyCount[0] && typeSkyCount[2] > typeSkyCount[3]) {
+                    return "<strong>Clouds:</strong> Broken Clouds";
+                } else if (typeSkyCount[3] >= typeSkyCount[2] && typeSkyCount[3] >= typeSkyCount[1] && typeSkyCount[3] >= typeSkyCount[0]){
+                    return "<strong>Rain:</strong> Light Rain";
                 }
-
-            } else if (day === 2) {
-                for (var i = findDayTwoStart(data); i < findDayTwoStart(data)+8; i+=1) {
-                    console.log(i);
-                    console.log('day 2')
-                }
-            } else if (day === 3) {
-                for (var i = findDayTwoStart(data)+8; i < findDayTwoStart(data)+16; i+=1) {
-                    console.log(i);
-                    console.log('day 3')
-                }
-            }
         }
 
+        function humiditySummary(data, day) {
+            var humidityAverage = 0;
+            var count = 0;
+            var logStartStop = findDayTwoStart (data, day);
+            for (var i = logStartStop[0]; i < logStartStop[1]; i += 1) {
+                humidityAverage += data.list[i].main.humidity;
+                count += 1;
+            }
+            return (humidityAverage/count).toFixed(0)
+        }
+
+        function windSummary(data, day) {
+            var windAverage = 0;
+            var count = 0;
+            var logStartStop = findDayTwoStart (data, day);
+            for (var i = logStartStop[0]; i < logStartStop[1]; i += 1) {
+                windAverage += data.list[i].wind.speed;
+                count += 1;
+            }
+            return (windAverage/count).toFixed(0)
+        }
+
+        function pressureSummary(data, day) {
+            var pressureAverage = 0;
+            var count = 0;
+            var logStartStop = findDayTwoStart (data, day);
+            for (var i = logStartStop[0]; i < logStartStop[1]; i += 1) {
+                pressureAverage += data.list[i].main.pressure;
+                count += 1;
+            }
+            return (pressureAverage/count).toFixed(2)
+        }
 
         function buildEachDayHTML(inputObject, day) {
-            var outputHTML = "<h4>"+getMinMaxDayTemp(inputObject, 1).max+" &#x2109 / "+getMinMaxDayTemp(inputObject, 1).min+" &#x2109</h4>";
+            var outputHTML = "<h4>"+getMinMaxDayTemp(inputObject, (day+1)).max+" &#x2109 / "+getMinMaxDayTemp(inputObject, (day+1)).min+" &#x2109</h4>";
             outputHTML += "<h5>Image Placeholder</h5>";
-            outputHTML += "<p><strong>Clouds:</strong> " + cloudSummary(inputObject, day) + "</p>";
-            // <p><strong>Clouds:</strong>Overcast Clouds</p>
-            // <p><strong>Humidity:</strong>52</p>
-            // <p><strong>Wind:</strong>6</p>
-            // <p><strong>Pressure:</strong>1025.93</p>
+            outputHTML += "<p>" + cloudSummary(inputObject, day) + "</p>";
+            outputHTML += "<p><strong>Humidity: </strong>" + humiditySummary(inputObject, day) + "</p>";
+            outputHTML += "<p><strong>Wind: </strong>" + windSummary(inputObject, day) + "</p>";
+            outputHTML +=  "<p><strong>Pressure: </strong>" + pressureSummary(inputObject, day) + "</p>";
             return outputHTML;
         }
 
@@ -133,43 +157,10 @@
             id: 4726206,
             units: "imperial"
         }).done(function(data) {
-            // $('.first-day').html(buildEachDayHTML(data, 1));
-            $('.second-day').html(buildEachDayHTML(data, 2));
-            $('.third-day').html(buildEachDayHTML(data, 3));
-
-            // console.log(getMinMaxDayTemp(data, 1));
-            // console.log(data.list);
-
-
-            // var outputData = [];
-            // var typeSkyCount = [0, 0, 0];                                       // [clearCount, cloudsCount, rainCount]
-            // console.log(data.list.length);
-            // for (var i = 0; i < 20; i += 1) {
-            //     console.log(data.length);
-            // }
-            // for (var j = 0; j < outputData.length; j += 1) {
-            //     if (outputData[j] === "Clear") {
-            //         typeSkyCount[0] += 1;
-            //     } else if (outputData[j] === "Clouds") {
-            //         typeSkyCount[1] += 1;
-            //     } else if (outputData[j] === "Rain") {
-            //         typeSkyCount[2] += 1;
-            //     }
-            // }
-            // if (typeSkyCount[0] > typeSkyCount[1] && typeSkyCount[0] > typeSkyCount[2]) {
-            // // return "Clear"
-            // } else if (typeSkyCount[1] > typeSkyCount[0] && typeSkyCount[1] > typeSkyCount[2]) {
-            // // return "Clouds"
-            // } else if (typeSkyCount[2] > typeSkyCount[0] && typeSkyCount[2] > typeSkyCount[1]) {
-            // // return "Rain"
-            // }
-
-
-
-
+            $('.first-day').html(buildEachDayHTML(data, 0));
+            $('.second-day').html(buildEachDayHTML(data, 1));
+            $('.third-day').html(buildEachDayHTML(data, 2));
         });
-
-
     });
 
 </script>
