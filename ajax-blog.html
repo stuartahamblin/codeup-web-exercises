@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div id="posts">
+        </div>
+        <button id="updateBlog">Update Blog</button>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    $('#updateBlog').click(function(){
+        $.ajax("data/blog.json").done(function (data) {
+            $('#posts').html(buildBlogHTML(data))
+        });
+    });
+
+    function buildBlogHTML(inputObjects) {
+        var outputHTML = "";
+        inputObjects.forEach(function(inputObject) {
+            outputHTML += "<div>";
+            outputHTML += "<h2>"+inputObject.title+"</h2>";
+            outputHTML += "<h3>"+inputObject.date+"</h3>";
+            outputHTML += "<p>"+inputObject.content+"</p>";
+            outputHTML += "<p>"+"<strong>Categories:</strong> "+ inputObject.categories.join(', ') + "</p>";
+            outputHTML += "</div>";
+            outputHTML += "<hr>";
+        });
+        return outputHTML
+    }
+
+    $.ajax("data/blog.json").done(function (data) {
+        $('#posts').html(buildBlogHTML(data))
+    });
+
+</script>
+
+</html>

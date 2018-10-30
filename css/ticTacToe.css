@@ -1,0 +1,8 @@
+.boxFormat {
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    border: 1px solid blue;
+    padding: 5px;
+    margin: 20px;
+}
