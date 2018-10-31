@@ -9,8 +9,11 @@
     <title>Weather Map Project</title>
     <style type="text/css">
         #map-canvas {
-            width: 770px;
-            height: 481px;
+            width: 1095px;
+            height: 450px;
+        }
+        body {
+            background-color: rgb(161, 217, 255);
         }
     </style>
 
@@ -24,16 +27,20 @@
 </main>
     <div class="row">
         <div class="col-4 text-center first-day">
-
         </div>
         <div class="col-4 text-center second-day">
         </div>
         <div class="col-4 text-center third-day">
         </div>
     </div>
+    <div class="col-12">
+        <div id="map-canvas"></div>
+    </div>
+
 </div>
-<div id="map-canvas"></div>
+
 <!--<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_GOES_HERE"></script>-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE73P3kXWvNt99ZaPe30d1nvfQ6AXhx84"></script>
 
 <script type="text/javascript">
     (function() {
@@ -41,15 +48,12 @@
 
         // Set our map options
         var mapOptions = {
-            // Set the zoom level
-            // zoom: 5,
-            // zoom: 15,
-            zoom: 20,
+            zoom: 5,
 
             // This sets the center of the map at our location
             center: {
-                lat:  32.2231891,
-                lng: -110.9693147
+                lat:  29.481137,
+                lng: -98.7945945
             }
         };
 
@@ -60,9 +64,15 @@
             lat: 32.2231,
             lng: -110.9693147
         };
-
-        infowindow.open(map, marker);
-
+        var pocaCosa = {
+            lat: 32.2231,
+            lng: -110.9693147
+        };
+        // Add the marker to our existing map
+        var marker = new google.maps.Marker({
+            position: pocaCosa,
+            map: map
+        });
     })();
 </script>
 
@@ -126,13 +136,13 @@
                 }
                 // console.log(typeSkyCount);
                 if (typeSkyCount[0] > typeSkyCount[1] && typeSkyCount[0] > typeSkyCount[2]) {               // picks most prevalent
-                    return "<strong>Clouds:</strong> Clear Sky";
+                    return ["Clouds", "Clear Sky"];
                 } else if (typeSkyCount[1] > typeSkyCount[0] && typeSkyCount[1] > typeSkyCount[3] && typeSkyCount[1] > typeSkyCount[2]) {
-                    return "<strong>Clouds:</strong> Few Clouds";
+                    return ["Clouds", "Few Clouds"];
                 } else if (typeSkyCount[2] > typeSkyCount[1] && typeSkyCount[2] > typeSkyCount[0] && typeSkyCount[2] > typeSkyCount[3]) {
-                    return "<strong>Clouds:</strong> Broken Clouds";
+                    return ["Clouds", "Broken Clouds"];
                 } else if (typeSkyCount[3] >= typeSkyCount[2] && typeSkyCount[3] >= typeSkyCount[1] && typeSkyCount[3] >= typeSkyCount[0]){
-                    return "<strong>Rain:</strong> Light Rain";
+                    return ["Rain", "Light Rain"];
                 }
         }
 
@@ -170,9 +180,10 @@
         }
 
         function buildEachDayHTML(inputObject, day) {
+            var cloudStrings = cloudSummary (inputObject, day);
             var outputHTML = "<h4>"+getMinMaxDayTemp(inputObject, (day+1)).max+" &#x2109 / "+getMinMaxDayTemp(inputObject, (day+1)).min+" &#x2109</h4>";
-            outputHTML += "<h5>Image Placeholder</h5>";
-            outputHTML += "<p>" + cloudSummary(inputObject, day) + "</p>";
+            outputHTML += '<div class="icon"></div>';
+            outputHTML += "<p>" + "<strong>" + cloudStrings[0] + ":</strong> " + cloudStrings[1] + "</p>";
             outputHTML += "<p><strong>Humidity: </strong>" + humiditySummary(inputObject, day) + "</p>";
             outputHTML += "<p><strong>Wind: </strong>" + windSummary(inputObject, day) + "</p>";
             outputHTML +=  "<p><strong>Pressure: </strong>" + pressureSummary(inputObject, day) + "</p>";
@@ -187,7 +198,11 @@
             $('.first-day').html(buildEachDayHTML(data, 0));
             $('.second-day').html(buildEachDayHTML(data, 1));
             $('.third-day').html(buildEachDayHTML(data, 2));
+            $(".icon").html("\"<img src='http://openweathermap.org/img/w/\" + data.weather[0].icon + \".png' alt='Icon depicting current weather.'>\"");
+            console.log(cloudSummary(data, 0));
+            console.log(data.list[0].weather[0].icon);
         });
+        // http://openweathermap.org/img/w/[icon].png
     });
 </script>
 
