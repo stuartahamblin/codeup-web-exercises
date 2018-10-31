@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="222ea90b-4834-4032-abc2-4051a4e1d523" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map-filter-reduce-lecture.html" beforeDir="false" afterPath="$PROJECT_DIR$/map-filter-reduce-lecture.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/map-filter-reduce.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/map-filter-reduce.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +60,7 @@
         <counts>
           <entry key="css" value="4752" />
           <entry key="html" value="29768" />
-          <entry key="js" value="37040" />
+          <entry key="js" value="37285" />
           <entry key="json" value="18" />
           <entry key="txt" value="24" />
         </counts>
@@ -70,7 +70,7 @@
           <entry key="CSS" value="4752" />
           <entry key="HTML" value="29768" />
           <entry key="JSON" value="18" />
-          <entry key="JavaScript" value="37040" />
+          <entry key="JavaScript" value="37285" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -99,8 +99,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/map-filter-reduce.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+            <state relative-caret-position="557">
+              <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -332,12 +332,12 @@
       <workItem from="1540757679528" duration="4350000" />
       <workItem from="1540762152988" duration="32623000" />
       <workItem from="1540838658260" duration="28331000" />
-      <workItem from="1540997090052" duration="9600000" />
+      <workItem from="1540997090052" duration="11404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="495059000" />
+    <option name="totallyTimeSpent" value="496863000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,7 +367,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4985694" weight="0.30136988" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4985694" weight="0.3009576" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50143063" side_tool="true" weight="0.3048276" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -770,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/map-filter-reduce.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+        <state relative-caret-position="557">
+          <caret line="90" column="44" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
         </state>
       </provider>
     </entry>

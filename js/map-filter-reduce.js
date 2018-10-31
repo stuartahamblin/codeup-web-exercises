@@ -72,11 +72,27 @@ console.log(longEmail);
 const singleString = users.reduce(function(accumulator, currentValue) {
     if (accumulator === "") {
         return accumulator + currentValue.name;
+    } else if (currentValue.name === users.slice(-1)[0].name) {
+        return accumulator + ", " + currentValue.name + ".";
     } else {
         return accumulator + ", " + currentValue.name;
     }
 }, "");
 console.log(singleString);
+
+const singleStrings = users.reduce(function(accumulator, currentValue, index) {
+    if (index === users.length - 1) {
+        return accumulator + currentValue.name + ".";
+    } else {
+        return accumulator + currentValue.name + ", ";
+    }
+}, "");
+console.log("ANSWER: " + singleString);
+console.log("ALT ANSWER: " + singleStrings);
+
+
+
+
 
 // Bonus
 
